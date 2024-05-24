@@ -1,2 +1,0 @@
-# hpg
-HivePasssGuard
