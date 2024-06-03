@@ -176,3 +176,278 @@ Migrating to CreateTeams (20240519010541)
   [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5748117206267804340)[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2024-05-25 11:20:38 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (4.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/index.html.erb within layouts/application (Duration: 40.4ms | Allocations: 4081)
+  Rendered layout layouts/application.html.erb (Duration: 415.1ms | Allocations: 74613)
+Completed 200 OK in 463ms (Views: 411.3ms | ActiveRecord: 10.8ms | Allocations: 87374)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2024-05-25 11:21:50 -0300
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 11.4ms | Allocations: 3439)
+  Rendered users/new.html.erb within layouts/application (Duration: 12.3ms | Allocations: 3753)
+  Rendered layout layouts/application.html.erb (Duration: 13.4ms | Allocations: 4642)
+Completed 200 OK in 66ms (Views: 13.8ms | ActiveRecord: 20.6ms | Allocations: 21851)
+
+
+Started POST "/users" for 127.0.0.1 at 2024-05-25 11:21:54 -0300
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "commit"=>"Create User"}
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:27:in `block in create'
+  [1m[36mUser Create (4.7ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at") VALUES ($1, $2) RETURNING "id"[0m  [["created_at", "2024-05-25 14:21:54.802881"], ["updated_at", "2024-05-25 14:21:54.802881"]]
+  ↳ app/controllers/users_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:27:in `block in create'
+Redirected to http://127.0.0.1:3000/users/1
+Completed 302 Found in 9ms (ActiveRecord: 6.1ms | Allocations: 3233)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2024-05-25 11:21:54 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.4ms | Allocations: 127)
+  Rendered users/show.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1121)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 2006)
+Completed 200 OK in 13ms (Views: 6.9ms | ActiveRecord: 0.6ms | Allocations: 4960)
+
+
+Started GET "/users/1/edit" for 127.0.0.1 at 2024-05-25 11:21:59 -0300
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 0.7ms | Allocations: 431)
+  Rendered users/edit.html.erb within layouts/application (Duration: 1.4ms | Allocations: 675)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 1564)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.3ms | Allocations: 2262)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2024-05-25 11:22:02 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered users/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 421)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 1309)
+Completed 200 OK in 5ms (Views: 2.8ms | ActiveRecord: 0.2ms | Allocations: 1927)
+
+
+Started GET "/users" for 127.0.0.1 at 2024-05-25 11:22:04 -0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered users/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 726)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 1616)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.3ms | Allocations: 1871)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2024-05-25 11:22:10 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered users/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 445)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | Allocations: 1331)
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 0.3ms | Allocations: 1952)
+
+
+Started GET "/users" for 127.0.0.1 at 2024-05-25 11:22:12 -0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered users/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 707)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 1597)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.6ms | Allocations: 1844)
+
+
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5748117206267804340)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to AddDetailsToUsers (20240602202340)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (14.7ms)[0m  [1m[35mALTER TABLE "users" ADD "name" character varying[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "lastname" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "email" character varying[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (2.4ms)[0m  [1m[35mALTER TABLE "users" ADD "role" integer DEFAULT 0[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240602202340') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(5748117206267804340)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (7.0ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "name", "lastname", "email", "role") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2024-06-02 21:58:50.705065"], ["updated_at", "2024-06-02 21:58:50.705065"], ["name", "Ed"], ["lastname", nil], ["email", nil], ["role", 2]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (2.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 2]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (3.8ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "name", "lastname", "email", "role") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["created_at", "2024-06-03 01:09:19.707988"], ["updated_at", "2024-06-03 01:09:19.707988"], ["name", "pavo"], ["lastname", nil], ["email", nil], ["role", 0]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5748117206267804340)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to AddDetailsToCredentials (20240602230118)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.4ms)[0m  [1m[35mALTER TABLE "credentials" ADD "username" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "credentials" ADD "pass" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "credentials" ADD "description" text[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "owner_id" bigint[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE INDEX "index_users_on_owner_id" ON "users" ("owner_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "encrypted_for_id" bigint[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE INDEX "index_users_on_encrypted_for_id" ON "users" ("encrypted_for_id")[0m
+  [1m[35m (5.2ms)[0m  [1m[35mALTER TABLE "credentials" ADD CONSTRAINT "fk_rails_0d85e66f03"
+FOREIGN KEY ("owner_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5748117206267804340)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5748117206267804340)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to AddDetailsToCredentials (20240602230118)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.8ms)[0m  [1m[35mALTER TABLE "credentials" ADD "username" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "credentials" ADD "pass" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "credentials" ADD "description" text[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "owner_id" bigint[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE INDEX "index_users_on_owner_id" ON "users" ("owner_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "encrypted_for_id" bigint[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE INDEX "index_users_on_encrypted_for_id" ON "users" ("encrypted_for_id")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "credentials" ADD CONSTRAINT "fk_rails_0d85e66f03"
+FOREIGN KEY ("owner_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5748117206267804340)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5748117206267804340)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to AddDetailsToCredentials (20240602230118)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.9ms)[0m  [1m[35mALTER TABLE "credentials" ADD "username" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "credentials" ADD "pass" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "credentials" ADD "description" text[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "owner_id" bigint[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE INDEX "index_users_on_owner_id" ON "users" ("owner_id")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "users" ADD "encrypted_for_id" bigint[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE INDEX "index_users_on_encrypted_for_id" ON "users" ("encrypted_for_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240602230118') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5748117206267804340)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5748117206267804340)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to AddRefToCredential (20240603034545)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(5748117206267804340)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5748117206267804340)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to AddRefToCredentials (20240603034545)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.8ms)[0m  [1m[35mALTER TABLE "credentials" ADD CONSTRAINT "fk_rails_0d85e66f03"
+FOREIGN KEY ("owner_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5748117206267804340)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5748117206267804340)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to AddRefToCredentials (20240603034545)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.6ms)[0m  [1m[35mALTER TABLE "credentials" ADD CONSTRAINT "fk_rails_0d85e66f03"
+FOREIGN KEY ("owner_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5748117206267804340)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5748117206267804340)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5748117206267804340)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5748117206267804340)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to AddRefToCredential (20240603035653)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.9ms)[0m  [1m[35mALTER TABLE "credentials" ADD "owner_id" bigint[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE INDEX "index_credentials_on_owner_id" ON "credentials" ("owner_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "credentials" ADD "encrypted_for_id" bigint[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE INDEX "index_credentials_on_encrypted_for_id" ON "credentials" ("encrypted_for_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240603035653') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5748117206267804340)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5748117206267804340)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to DelRefToUser (20240603035746)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.7ms)[0m  [1m[35mALTER TABLE "users" DROP COLUMN "owner_id"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" DROP COLUMN "encrypted_for_id"[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240603035746') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5748117206267804340)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5748117206267804340)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to AddRefToCredentials (20240603040027)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.5ms)[0m  [1m[35mALTER TABLE "credentials" ADD CONSTRAINT "fk_rails_0d85e66f03"
+FOREIGN KEY ("owner_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "credentials" ADD CONSTRAINT "fk_rails_a2bcff5542"
+FOREIGN KEY ("encrypted_for_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240603040027') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5748117206267804340)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCredential Create (5.3ms)[0m  [1m[32mINSERT INTO "credentials" ("created_at", "updated_at", "username", "pass", "description", "owner_id", "encrypted_for_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["created_at", "2024-06-03 04:09:59.908906"], ["updated_at", "2024-06-03 04:09:59.908906"], ["username", "admin"], ["pass", "123456"], ["description", "test pass para equitpo pavo"], ["owner_id", 3], ["encrypted_for_id", "[FILTERED]"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
