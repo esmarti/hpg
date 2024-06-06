@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_03_040027) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_05_005227) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -22,8 +22,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_03_040027) do
     t.text "description"
     t.bigint "owner_id"
     t.bigint "encrypted_for_id"
+    t.bigint "team_id"
     t.index ["encrypted_for_id"], name: "index_credentials_on_encrypted_for_id"
     t.index ["owner_id"], name: "index_credentials_on_owner_id"
+    t.index ["team_id"], name: "index_credentials_on_team_id"
   end
 
   create_table "teams", force: :cascade do |t|
@@ -43,6 +45,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_03_040027) do
     t.index ["email"], name: "index_users_on_email"
   end
 
+  add_foreign_key "credentials", "teams"
   add_foreign_key "credentials", "users", column: "encrypted_for_id"
   add_foreign_key "credentials", "users", column: "owner_id"
 end
