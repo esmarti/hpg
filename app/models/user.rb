@@ -5,4 +5,5 @@ class User < ApplicationRecord
 	has_many :encrypted_credentials, :class_name => 'Credential', :foreign_key => 'encrypted_for_id'
 	has_many :teamMemberships
 	has_many :teams, through: :teamMemberships
+	belongs_to :gpg_key
 end

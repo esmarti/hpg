@@ -17,6 +17,7 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    @user = User.find(params[:id])
   end
 
   # POST /users or /users.json
@@ -57,6 +58,11 @@ class UsersController < ApplicationController
     end
   end
 
+  # GET /users/1/gpg_show
+  def gpg_show
+    @user = User.find(params[:id])
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
@@ -65,6 +71,6 @@ class UsersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def user_params
-      params.fetch(:user, {})
+      params.fetch(:user, {}).permit(:name, :lastname, :email, :role)
     end
 end

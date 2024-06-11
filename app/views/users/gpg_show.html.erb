@@ -1,0 +1,17 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Public GPG Keys</h1>
+
+<div id="users">
+  <p><%= render @user %>
+    <% unless @user.gpg_key_id? %>
+      <%= link_to "Create new GPG Key for this user", @user %>
+    <% else %>
+      <h1>GPG Certificate</h1>
+      <pre><%= @user.gpg_key.gpg_public_key %></pre>
+      <%= link_to "Delete GPG Key for this user", @user %>
+    <% end %>
+  </p>
+</div>
+
+<%= link_to "Back", user_path(@user) %>

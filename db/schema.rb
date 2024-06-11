@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_07_032054) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_11_023216) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -26,6 +26,13 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_07_032054) do
     t.index ["encrypted_for_id"], name: "index_credentials_on_encrypted_for_id"
     t.index ["owner_id"], name: "index_credentials_on_owner_id"
     t.index ["team_id"], name: "index_credentials_on_team_id"
+  end
+
+  create_table "gpg_keys", force: :cascade do |t|
+    t.text "description"
+    t.text "gpg_public_key"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "team_memberships", force: :cascade do |t|
@@ -54,7 +61,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_07_032054) do
     t.string "email"
     t.integer "role", default: 0
     t.bigint "owned_teams_id"
+    t.bigint "gpg_key_id"
     t.index ["email"], name: "index_users_on_email"
+    t.index ["gpg_key_id"], name: "index_users_on_gpg_key_id"
     t.index ["owned_teams_id"], name: "index_users_on_owned_teams_id"
   end
 
@@ -64,5 +73,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_07_032054) do
   add_foreign_key "team_memberships", "teams"
   add_foreign_key "team_memberships", "users"
   add_foreign_key "teams", "users", column: "owner_id"
+  add_foreign_key "users", "gpg_keys"
   add_foreign_key "users", "teams", column: "owned_teams_id"
 end
