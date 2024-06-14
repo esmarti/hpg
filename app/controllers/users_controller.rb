@@ -61,6 +61,7 @@ class UsersController < ApplicationController
   # GET /users/1/gpg_show
   def gpg_show
     @user = User.find(params[:id])
+    @page_libs = [:openpgp, :pgpKeyGenerate]
   end
 
   private

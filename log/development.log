@@ -2864,3 +2864,2249 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 1.3ms | Allocations: 3309)
 
 
+Started GET "/" for 127.0.0.1 at 2024-06-11 23:05:58 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 0.5ms | Allocations: 187)
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered users/index.html.erb within layouts/application (Duration: 69.1ms | Allocations: 18415)
+  Rendered layout layouts/application.html.erb (Duration: 150.2ms | Allocations: 38434)
+Completed 200 OK in 176ms (Views: 139.1ms | ActiveRecord: 13.8ms | Allocations: 51682)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2024-06-11 23:06:12 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:70:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered users/show.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1373)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 2336)
+Completed 200 OK in 10ms (Views: 3.3ms | ActiveRecord: 0.7ms | Allocations: 4966)
+
+
+Started GET "/" for 127.0.0.1 at 2024-06-11 23:06:24 -0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered users/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 852)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 1816)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.8ms | Allocations: 2071)
+
+
+Started GET "/users/gpg_show/3" for 127.0.0.1 at 2024-06-11 23:06:38 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 20)
+  [1m[36mGpgKey Load (3.9ms)[0m  [1m[34mSELECT "gpg_keys".* FROM "gpg_keys" WHERE "gpg_keys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/gpg_show.html.erb:11
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 45.3ms | Allocations: 21651)
+  Rendered layout layouts/application.html.erb (Duration: 48.1ms | Allocations: 23834)
+Completed 200 OK in 50ms (Views: 42.5ms | ActiveRecord: 6.3ms | Allocations: 24549)
+
+
+Started GET "/users/" for 127.0.0.1 at 2024-06-11 23:06:59 -0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered users/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 850)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 1817)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.6ms | Allocations: 2065)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2024-06-11 23:07:01 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:70:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered users/show.html.erb within layouts/application (Duration: 13.7ms | Allocations: 521)
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | Allocations: 1499)
+Completed 200 OK in 17ms (Views: 15.3ms | ActiveRecord: 0.2ms | Allocations: 2133)
+
+
+Started GET "/users/gpg_show/3" for 127.0.0.1 at 2024-06-11 23:30:10 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  [1m[36mGpgKey Load (0.5ms)[0m  [1m[34mSELECT "gpg_keys".* FROM "gpg_keys" WHERE "gpg_keys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/gpg_show.html.erb:11
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 4.3ms | Allocations: 851)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 3050)
+Completed 200 OK in 33ms (Views: 7.2ms | ActiveRecord: 6.1ms | Allocations: 6632)
+
+
+Started GET "/users/gpg_show/3" for 127.0.0.1 at 2024-06-11 23:39:30 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  [1m[36mGpgKey Load (0.5ms)[0m  [1m[34mSELECT "gpg_keys".* FROM "gpg_keys" WHERE "gpg_keys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/gpg_show.html.erb:11
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 2.7ms | Allocations: 866)
+  Rendered layout layouts/application.html.erb (Duration: 16.6ms | Allocations: 5857)
+Completed 200 OK in 42ms (Views: 16.7ms | ActiveRecord: 6.1ms | Allocations: 9372)
+
+
+Started GET "/users/gpg_show/3" for 127.0.0.1 at 2024-06-11 23:41:05 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  [1m[36mGpgKey Load (0.4ms)[0m  [1m[34mSELECT "gpg_keys".* FROM "gpg_keys" WHERE "gpg_keys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/gpg_show.html.erb:11
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 8.2ms | Allocations: 859)
+  Rendered layout layouts/application.html.erb (Duration: 31.4ms | Allocations: 4236)
+Completed 200 OK in 37ms (Views: 33.0ms | ActiveRecord: 0.8ms | Allocations: 4871)
+
+
+Started GET "/users/gpg_show/3" for 127.0.0.1 at 2024-06-11 23:41:43 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  [1m[36mGpgKey Load (0.4ms)[0m  [1m[34mSELECT "gpg_keys".* FROM "gpg_keys" WHERE "gpg_keys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/gpg_show.html.erb:11
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 8.4ms | Allocations: 862)
+  Rendered layout layouts/application.html.erb (Duration: 25.3ms | Allocations: 4253)
+Completed 200 OK in 31ms (Views: 26.8ms | ActiveRecord: 0.9ms | Allocations: 4888)
+
+
+Started GET "/users/gpg_show/3" for 127.0.0.1 at 2024-06-11 23:42:16 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  [1m[36mGpgKey Load (0.6ms)[0m  [1m[34mSELECT "gpg_keys".* FROM "gpg_keys" WHERE "gpg_keys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/gpg_show.html.erb:11
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 4.8ms | Allocations: 847)
+  Rendered layout layouts/application.html.erb (Duration: 9.5ms | Allocations: 3040)
+Completed 200 OK in 12ms (Views: 9.3ms | ActiveRecord: 0.9ms | Allocations: 3675)
+
+
+Started GET "/users/gpg_show/3" for 127.0.0.1 at 2024-06-11 23:42:47 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  [1m[36mGpgKey Load (0.5ms)[0m  [1m[34mSELECT "gpg_keys".* FROM "gpg_keys" WHERE "gpg_keys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/gpg_show.html.erb:11
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 3.0ms | Allocations: 853)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 4223)
+Completed 200 OK in 12ms (Views: 9.2ms | ActiveRecord: 0.8ms | Allocations: 4859)
+
+
+Started GET "/users/gpg_show/3" for 127.0.0.1 at 2024-06-11 23:44:41 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 20)
+  [1m[36mGpgKey Load (0.4ms)[0m  [1m[34mSELECT "gpg_keys".* FROM "gpg_keys" WHERE "gpg_keys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/gpg_show.html.erb:11
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 2.6ms | Allocations: 850)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 4228)
+Completed 200 OK in 11ms (Views: 8.7ms | ActiveRecord: 0.8ms | Allocations: 4862)
+
+
+Started GET "/users/gpg_show/3" for 127.0.0.1 at 2024-06-11 23:45:12 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  [1m[36mGpgKey Load (3.6ms)[0m  [1m[34mSELECT "gpg_keys".* FROM "gpg_keys" WHERE "gpg_keys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/gpg_show.html.erb:11
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 6.6ms | Allocations: 835)
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | Allocations: 4205)
+Completed 200 OK in 16ms (Views: 9.0ms | ActiveRecord: 4.9ms | Allocations: 4839)
+
+
+Started GET "/users/gpg_show/3" for 127.0.0.1 at 2024-06-11 23:46:02 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  [1m[36mGpgKey Load (0.5ms)[0m  [1m[34mSELECT "gpg_keys".* FROM "gpg_keys" WHERE "gpg_keys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/gpg_show.html.erb:11
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 2.5ms | Allocations: 859)
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | Allocations: 4270)
+Completed 200 OK in 11ms (Views: 8.9ms | ActiveRecord: 0.7ms | Allocations: 4905)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2024-06-11 23:52:23 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:70:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered users/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 500)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 1464)
+Completed 200 OK in 26ms (Views: 2.7ms | ActiveRecord: 5.0ms | Allocations: 5028)
+
+
+Started GET "/users" for 127.0.0.1 at 2024-06-11 23:52:26 -0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered users/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 870)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 1834)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.7ms | Allocations: 2081)
+
+
+Started GET "/users/4" for 127.0.0.1 at 2024-06-11 23:52:28 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:70:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered users/show.html.erb within layouts/application (Duration: 2.3ms | Allocations: 509)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 1468)
+Completed 200 OK in 7ms (Views: 4.4ms | ActiveRecord: 0.4ms | Allocations: 2100)
+
+
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-11 23:52:30 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 341)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 2519)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.2ms | Allocations: 3153)
+
+
+Started GET "/users/4" for 127.0.0.1 at 2024-06-11 23:52:33 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:70:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered users/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 503)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 1462)
+Completed 200 OK in 5ms (Views: 3.0ms | ActiveRecord: 0.2ms | Allocations: 2094)
+
+
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-11 23:52:36 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 332)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 2506)
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 0.3ms | Allocations: 3139)
+
+
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-11 23:58:50 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1590)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | Allocations: 1691)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 4.8ms | Allocations: 12954)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <p style="color: green"><%= notice %></p>
+
+<h1>Public GPG Keys</h1>
+
+<div id="users">
+  <p><%= render @user %>
+    <% unless @user.gpg_key_id? %>
+      <%= link_to "Create new GPG Key for this user", @user %>
+    <% else %>
+      <h1>GPG Certificate</h1>
+      <pre><%= @user.gpg_key.gpg_public_key %></pre>
+      <a href="#" onclick="location.href='URL';">Delete GPG Key for this user</a>
+      <%= #link_to "Delete GPG Key for this user", @user %>
+    <% end %>
+  </p>
+</div>
+
+<%= link_to "Back", user_path(@user) %>
+
+):
+1:    <p style="color: green"><%= notice %></p>
+2:    
+3:    <h1>Public GPG Keys</h1>
+4:    
+5:    <div id="users">
+6:      <p><%= render @user %>
+7:        <% unless @user.gpg_key_id? %>
+8:          <%= link_to "Create new GPG Key for this user", @user %>
+9:        <% else %>
+10:          <h1>GPG Certificate</h1>
+11:          <pre><%= @user.gpg_key.gpg_public_key %></pre>
+12:          <a href="#" onclick="location.href='URL';">Delete GPG Key for this user</a>
+13:          <%= #link_to "Delete GPG Key for this user", @user %>
+14:        <% end %>
+15:      </p>
+16:    </div>
+17:    
+18:    <%= link_to "Back", user_path(@user) %>
+  
+app/views/users/gpg_show.html.erb:16: unknown regexp options - dv
+app/views/users/gpg_show.html.erb:21: unterminated string meets end of file
+app/views/users/gpg_show.html.erb:21: syntax error, unexpected end-of-input, expecting ')'
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-11 23:59:23 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 1188)
+  Rendered layout layouts/application.html.erb (Duration: 1.4ms | Allocations: 1282)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 5.3ms | Allocations: 9874)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <p style="color: green"><%= notice %></p>
+
+<h1>Public GPG Keys</h1>
+
+<div id="users">
+  <p><%= render @user %>
+    <% unless @user.gpg_key_id? %>
+      <%= link_to "Create new GPG Key for this user", @user %>
+    <% else %>
+      <h1>GPG Certificate</h1>
+      <pre><%= @user.gpg_key.gpg_public_key %></pre>
+      <a href="#" onclick="location.href='URL';">Delete GPG Key for this user</a>
+      <%= /*link_to "Delete GPG Key for this user", @user */%>
+    <% end %>
+  </p>
+</div>
+
+<%= link_to "Back", user_path(@user) %>
+
+):
+1:    <p style="color: green"><%= notice %></p>
+2:    
+3:    <h1>Public GPG Keys</h1>
+4:    
+5:    <div id="users">
+6:      <p><%= render @user %>
+7:        <% unless @user.gpg_key_id? %>
+8:          <%= link_to "Create new GPG Key for this user", @user %>
+9:        <% else %>
+10:          <h1>GPG Certificate</h1>
+11:          <pre><%= @user.gpg_key.gpg_public_key %></pre>
+12:          <a href="#" onclick="location.href='URL';">Delete GPG Key for this user</a>
+13:          <%= /*link_to "Delete GPG Key for this user", @user */%>
+14:        <% end %>
+15:      </p>
+16:    </div>
+17:    
+18:    <%= link_to "Back", user_path(@user) %>
+  
+app/views/users/gpg_show.html.erb:13: target of repeat operator is not specified: /*link_to "Delete GPG Key for this user", @user */
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-12 00:00:40 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.4ms | Allocations: 149)
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 2.1ms | Allocations: 876)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 3405)
+Completed 200 OK in 26ms (Views: 6.8ms | ActiveRecord: 3.0ms | Allocations: 11976)
+
+
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-12 00:01:24 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.5ms | Allocations: 149)
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 2.2ms | Allocations: 860)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 3389)
+Completed 200 OK in 24ms (Views: 7.8ms | ActiveRecord: 3.9ms | Allocations: 11925)
+
+
+Started GET "/users/gpg_show/URL" for 127.0.0.1 at 2024-06-12 00:01:36 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"URL"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms | Allocations: 873)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=URL):
+  
+app/controllers/users_controller.rb:63:in `gpg_show'
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-12 00:10:23 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.4ms | Allocations: 149)
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 1.9ms | Allocations: 881)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 4610)
+Completed 200 OK in 46ms (Views: 10.2ms | ActiveRecord: 5.8ms | Allocations: 15831)
+
+
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (9.1ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "email" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2024-06-12 03:22:51.233906"], ["email", "sergio@yahoo.com"], ["id", 4]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1 OFFSET $2[0m  [["LIMIT", 1], ["OFFSET", 1]]
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-12 00:23:18 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 3.8ms | Allocations: 149)
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 5.0ms | Allocations: 877)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 3408)
+Completed 200 OK in 47ms (Views: 9.1ms | ActiveRecord: 5.1ms | Allocations: 14457)
+
+
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-12 00:24:24 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.4ms | Allocations: 149)
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 1.8ms | Allocations: 881)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 3410)
+Completed 200 OK in 32ms (Views: 6.3ms | ActiveRecord: 6.5ms | Allocations: 11975)
+
+
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-12 00:25:38 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.6ms | Allocations: 149)
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 2.1ms | Allocations: 897)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 3426)
+Completed 200 OK in 27ms (Views: 6.3ms | ActiveRecord: 4.5ms | Allocations: 11928)
+
+
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-12 00:26:20 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.3ms | Allocations: 149)
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 2.4ms | Allocations: 883)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 3412)
+Completed 200 OK in 24ms (Views: 6.9ms | ActiveRecord: 5.3ms | Allocations: 11914)
+
+
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-12 00:27:41 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.5ms | Allocations: 149)
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 2.1ms | Allocations: 874)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 3380)
+Completed 200 OK in 29ms (Views: 8.3ms | ActiveRecord: 3.4ms | Allocations: 11841)
+
+
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-12 00:29:12 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.3ms | Allocations: 149)
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 1.6ms | Allocations: 890)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 3419)
+Completed 200 OK in 22ms (Views: 7.2ms | ActiveRecord: 3.1ms | Allocations: 11962)
+
+
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-12 01:13:45 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.3ms | Allocations: 149)
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 1.9ms | Allocations: 888)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 3417)
+Completed 200 OK in 47ms (Views: 6.5ms | ActiveRecord: 4.8ms | Allocations: 14568)
+
+
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-12 01:15:30 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.4ms | Allocations: 149)
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 1.9ms | Allocations: 907)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 3436)
+Completed 200 OK in 33ms (Views: 8.2ms | ActiveRecord: 7.5ms | Allocations: 11961)
+
+
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-12 01:15:51 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.5ms | Allocations: 149)
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 2.6ms | Allocations: 925)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 3419)
+Completed 200 OK in 28ms (Views: 8.5ms | ActiveRecord: 7.5ms | Allocations: 11936)
+
+
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-12 01:16:02 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.5ms | Allocations: 149)
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 2.1ms | Allocations: 896)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 3425)
+Completed 200 OK in 26ms (Views: 6.7ms | ActiveRecord: 2.4ms | Allocations: 11967)
+
+
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-12 01:16:56 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 331)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 3710)
+Completed 200 OK in 10ms (Views: 6.9ms | ActiveRecord: 0.3ms | Allocations: 4344)
+
+
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-12 01:17:17 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 313)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 3684)
+Completed 200 OK in 9ms (Views: 7.3ms | ActiveRecord: 0.4ms | Allocations: 4318)
+
+
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-12 01:17:56 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.5ms | Allocations: 149)
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 2.0ms | Allocations: 908)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 3437)
+Completed 200 OK in 25ms (Views: 6.5ms | ActiveRecord: 2.8ms | Allocations: 11979)
+
+
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-12 01:18:54 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 325)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 3690)
+Completed 200 OK in 9ms (Views: 7.0ms | ActiveRecord: 0.3ms | Allocations: 4324)
+
+
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-12 01:23:17 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.4ms | Allocations: 149)
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 2.0ms | Allocations: 908)
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | Allocations: 4644)
+Completed 200 OK in 36ms (Views: 12.7ms | ActiveRecord: 5.3ms | Allocations: 13185)
+
+
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-12 01:23:29 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.4ms | Allocations: 149)
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 2.4ms | Allocations: 906)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 3435)
+Completed 200 OK in 29ms (Views: 7.9ms | ActiveRecord: 5.3ms | Allocations: 11995)
+
+
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-12 01:23:56 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.5ms | Allocations: 149)
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 2.0ms | Allocations: 913)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 3442)
+Completed 200 OK in 28ms (Views: 8.3ms | ActiveRecord: 3.1ms | Allocations: 11944)
+
+
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-12 01:25:55 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 325)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 3705)
+Completed 200 OK in 9ms (Views: 7.2ms | ActiveRecord: 0.2ms | Allocations: 4339)
+
+
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-12 01:32:27 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.4ms | Allocations: 149)
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 1.9ms | Allocations: 912)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 3441)
+Completed 200 OK in 40ms (Views: 5.9ms | ActiveRecord: 6.3ms | Allocations: 14631)
+
+
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-12 01:36:05 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.4ms | Allocations: 149)
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 1.9ms | Allocations: 904)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 4619)
+Completed 200 OK in 38ms (Views: 10.0ms | ActiveRecord: 5.4ms | Allocations: 13143)
+
+
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-12 01:37:04 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.4ms | Allocations: 149)
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 2.2ms | Allocations: 928)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 3457)
+Completed 200 OK in 33ms (Views: 7.0ms | ActiveRecord: 4.9ms | Allocations: 11981)
+
+
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-12 01:37:06 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 322)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 2499)
+Completed 200 OK in 6ms (Views: 3.7ms | ActiveRecord: 0.4ms | Allocations: 3134)
+
+
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-12 01:38:33 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.4ms | Allocations: 149)
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 2.1ms | Allocations: 905)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 3434)
+Completed 200 OK in 32ms (Views: 7.8ms | ActiveRecord: 3.8ms | Allocations: 11976)
+
+
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-12 01:38:41 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 322)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 2496)
+Completed 200 OK in 10ms (Views: 4.7ms | ActiveRecord: 1.4ms | Allocations: 3131)
+
+
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-12 01:45:18 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.3ms | Allocations: 149)
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 1.5ms | Allocations: 926)
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | Allocations: 4876)
+Completed 200 OK in 54ms (Views: 11.7ms | ActiveRecord: 5.3ms | Allocations: 16069)
+
+
+Started GET "/" for 127.0.0.1 at 2024-06-12 01:45:31 -0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered users/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1056)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 2018)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.4ms | Allocations: 2357)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2024-06-12 01:45:36 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:70:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered users/show.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1404)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 2361)
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.3ms | Allocations: 3085)
+
+
+Started GET "/users/gpg_show/3" for 127.0.0.1 at 2024-06-12 01:45:45 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  [1m[36mGpgKey Load (0.5ms)[0m  [1m[34mSELECT "gpg_keys".* FROM "gpg_keys" WHERE "gpg_keys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/gpg_show.html.erb:21
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 12.6ms | Allocations: 5816)
+  Rendered layout layouts/application.html.erb (Duration: 15.5ms | Allocations: 7988)
+Completed 200 OK in 18ms (Views: 12.0ms | ActiveRecord: 4.2ms | Allocations: 8622)
+
+
+Started GET "/users/gpg_show/3" for 127.0.0.1 at 2024-06-12 01:49:08 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  [1m[36mGpgKey Load (0.5ms)[0m  [1m[34mSELECT "gpg_keys".* FROM "gpg_keys" WHERE "gpg_keys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/gpg_show.html.erb:21
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 3.3ms | Allocations: 853)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 3025)
+Completed 200 OK in 9ms (Views: 6.4ms | ActiveRecord: 0.7ms | Allocations: 3661)
+
+
+Started GET "/users/gpg_show/3" for 127.0.0.1 at 2024-06-12 01:52:07 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  [1m[36mGpgKey Load (0.3ms)[0m  [1m[34mSELECT "gpg_keys".* FROM "gpg_keys" WHERE "gpg_keys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/gpg_show.html.erb:21
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 1.9ms | Allocations: 862)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 4410)
+Completed 200 OK in 9ms (Views: 6.4ms | ActiveRecord: 0.6ms | Allocations: 5044)
+
+
+Started GET "/users/gpg_show/3" for 127.0.0.1 at 2024-06-12 01:54:22 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  [1m[36mGpgKey Load (0.6ms)[0m  [1m[34mSELECT "gpg_keys".* FROM "gpg_keys" WHERE "gpg_keys"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/gpg_show.html.erb:21
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 5.0ms | Allocations: 856)
+  Rendered layout layouts/application.html.erb (Duration: 22.3ms | Allocations: 4424)
+Completed 200 OK in 25ms (Views: 22.2ms | ActiveRecord: 1.0ms | Allocations: 5058)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2024-06-12 02:14:53 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:70:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.6ms | Allocations: 149)
+  Rendered users/show.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1742)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 3007)
+Completed 200 OK in 46ms (Views: 7.4ms | ActiveRecord: 5.5ms | Allocations: 14230)
+
+
+Started GET "/users" for 127.0.0.1 at 2024-06-12 02:14:56 -0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered users/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1048)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 2010)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.6ms | Allocations: 2349)
+
+
+Started GET "/users/4" for 127.0.0.1 at 2024-06-12 02:14:58 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:70:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered users/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 524)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 1481)
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.2ms | Allocations: 2114)
+
+
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-12 02:15:03 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 633)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 2824)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.2ms | Allocations: 3522)
+
+
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-12 02:15:23 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 325)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 2531)
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.2ms | Allocations: 3166)
+
+
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-12 02:16:11 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.5ms | Allocations: 149)
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 2.9ms | Allocations: 910)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 3432)
+Completed 200 OK in 37ms (Views: 8.5ms | ActiveRecord: 6.4ms | Allocations: 11997)
+
+
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-12 02:16:13 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 322)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 2494)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.3ms | Allocations: 3128)
+
+
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-12 02:16:17 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 322)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 2494)
+Completed 200 OK in 6ms (Views: 4.0ms | ActiveRecord: 0.2ms | Allocations: 3128)
+
+
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-12 02:16:19 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 310)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 2482)
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.2ms | Allocations: 3116)
+
+
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-12 02:16:43 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.4ms | Allocations: 149)
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 1.8ms | Allocations: 918)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 3447)
+Completed 200 OK in 30ms (Views: 7.0ms | ActiveRecord: 5.3ms | Allocations: 11990)
+
+
+Started GET "/" for 127.0.0.1 at 2024-06-12 18:28:31 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (3.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (8.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 0.5ms | Allocations: 187)
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered users/index.html.erb within layouts/application (Duration: 85.7ms | Allocations: 17272)
+  Rendered layout layouts/application.html.erb (Duration: 332.2ms | Allocations: 41451)
+Completed 200 OK in 402ms (Views: 302.1ms | ActiveRecord: 37.2ms | Allocations: 54646)
+
+
+Started GET "/users/4" for 127.0.0.1 at 2024-06-12 18:28:39 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:70:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered users/show.html.erb within layouts/application (Duration: 13.7ms | Allocations: 2368)
+  Rendered layout layouts/application.html.erb (Duration: 15.8ms | Allocations: 3330)
+Completed 200 OK in 23ms (Views: 16.6ms | ActiveRecord: 0.6ms | Allocations: 5961)
+
+
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-12 18:28:42 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.2ms | Allocations: 20)
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 4.5ms | Allocations: 642)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 2822)
+Completed 200 OK in 12ms (Views: 8.6ms | ActiveRecord: 0.3ms | Allocations: 3537)
+
+
+Started GET "/" for 127.0.0.1 at 2024-06-13 21:37:08 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (2.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (10.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 0.4ms | Allocations: 187)
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered users/index.html.erb within layouts/application (Duration: 73.0ms | Allocations: 17271)
+  Rendered layout layouts/application.html.erb (Duration: 167.7ms | Allocations: 37561)
+Completed 200 OK in 207ms (Views: 139.2ms | ActiveRecord: 32.9ms | Allocations: 50759)
+
+
+Started GET "/users/4" for 127.0.0.1 at 2024-06-13 21:37:33 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:70:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered users/show.html.erb within layouts/application (Duration: 10.0ms | Allocations: 2388)
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | Allocations: 3350)
+Completed 200 OK in 24ms (Views: 11.9ms | ActiveRecord: 0.3ms | Allocations: 15572)
+
+
+Started GET "/users" for 127.0.0.1 at 2024-06-13 21:37:40 -0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered users/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 868)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 1830)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.4ms | Allocations: 2085)
+
+
+Started GET "/users/4" for 127.0.0.1 at 2024-06-13 21:37:41 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:70:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered users/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 515)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 1472)
+Completed 200 OK in 5ms (Views: 2.8ms | ActiveRecord: 0.2ms | Allocations: 2120)
+
+
+Started GET "/users/4/edit" for 127.0.0.1 at 2024-06-13 21:37:42 -0300
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:70:in `set_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering users/edit.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 5.1ms | Allocations: 2279)
+  Rendered users/edit.html.erb within layouts/application (Duration: 6.9ms | Allocations: 2596)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 3553)
+Completed 200 OK in 12ms (Views: 8.7ms | ActiveRecord: 0.3ms | Allocations: 4537)
+
+
+Started GET "/users" for 127.0.0.1 at 2024-06-13 21:37:45 -0300
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 19)
+  Rendered users/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 859)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 1822)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.4ms | Allocations: 2077)
+
+
+Started GET "/users/4" for 127.0.0.1 at 2024-06-13 21:37:47 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:70:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered users/show.html.erb within layouts/application (Duration: 12.9ms | Allocations: 497)
+  Rendered layout layouts/application.html.erb (Duration: 14.2ms | Allocations: 1473)
+Completed 200 OK in 16ms (Views: 14.6ms | ActiveRecord: 0.2ms | Allocations: 2107)
+
+
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-13 21:37:51 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 1.7ms | Allocations: 619)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 2824)
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.2ms | Allocations: 3525)
+
+
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-13 21:53:06 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.3ms | Allocations: 149)
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 4.3ms | Allocations: 934)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 3473)
+Completed 200 OK in 61ms (Views: 8.3ms | ActiveRecord: 7.1ms | Allocations: 14697)
+
+
+Started GET "/users/gpg_show/warning.png" for 127.0.0.1 at 2024-06-13 21:53:06 -0300
+Processing by UsersController#gpg_show as PNG
+  Parameters: {"id"=>"warning"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms | Allocations: 887)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=warning):
+  
+app/controllers/users_controller.rb:63:in `gpg_show'
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-13 21:53:36 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 1.6ms | Allocations: 149)
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 5.4ms | Allocations: 929)
+  Rendered layout layouts/application.html.erb (Duration: 15.5ms | Allocations: 3468)
+Completed 200 OK in 53ms (Views: 18.8ms | ActiveRecord: 11.3ms | Allocations: 12111)
+
+
+Started GET "/users/gpg_show/warning.png" for 127.0.0.1 at 2024-06-13 21:53:36 -0300
+Processing by UsersController#gpg_show as PNG
+  Parameters: {"id"=>"warning"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+Completed 404 Not Found in 7ms (ActiveRecord: 0.3ms | Allocations: 861)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=warning):
+  
+app/controllers/users_controller.rb:63:in `gpg_show'
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-13 21:54:42 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.4ms | Allocations: 149)
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 2.2ms | Allocations: 940)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 3479)
+Completed 200 OK in 22ms (Views: 6.5ms | ActiveRecord: 3.5ms | Allocations: 12024)
+
+
+Started GET "/users/gpg_show/warning.png" for 127.0.0.1 at 2024-06-13 21:54:42 -0300
+Processing by UsersController#gpg_show as PNG
+  Parameters: {"id"=>"warning"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms | Allocations: 861)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=warning):
+  
+app/controllers/users_controller.rb:63:in `gpg_show'
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-13 21:54:54 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 1.0ms | Allocations: 149)
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 4.1ms | Allocations: 935)
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | Allocations: 3474)
+Completed 200 OK in 33ms (Views: 13.7ms | ActiveRecord: 3.3ms | Allocations: 12080)
+
+
+Started GET "/users/gpg_show/warning.png" for 127.0.0.1 at 2024-06-13 21:54:54 -0300
+Processing by UsersController#gpg_show as PNG
+  Parameters: {"id"=>"warning"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms | Allocations: 861)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=warning):
+  
+app/controllers/users_controller.rb:63:in `gpg_show'
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-13 21:58:55 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.4ms | Allocations: 149)
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 2.1ms | Allocations: 945)
+  Rendered layout layouts/application.html.erb (Duration: 55.5ms | Allocations: 6933)
+Completed 200 OK in 83ms (Views: 57.4ms | ActiveRecord: 6.4ms | Allocations: 15478)
+
+
+Started GET "/users/gpg_show/warning.png" for 127.0.0.1 at 2024-06-13 21:58:55 -0300
+Processing by UsersController#gpg_show as PNG
+  Parameters: {"id"=>"warning"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms | Allocations: 864)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=warning):
+  
+app/controllers/users_controller.rb:63:in `gpg_show'
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-13 22:05:08 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 322)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 2530)
+Completed 200 OK in 47ms (Views: 6.0ms | ActiveRecord: 8.7ms | Allocations: 6098)
+
+
+Started GET "/users/gpg_show/warning.png" for 127.0.0.1 at 2024-06-13 22:05:08 -0300
+Processing by UsersController#gpg_show as PNG
+  Parameters: {"id"=>"warning"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms | Allocations: 855)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=warning):
+  
+app/controllers/users_controller.rb:63:in `gpg_show'
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-13 22:05:09 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 334)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 2542)
+Completed 200 OK in 6ms (Views: 3.5ms | ActiveRecord: 0.3ms | Allocations: 3177)
+
+
+Started GET "/users/gpg_show/warning.png" for 127.0.0.1 at 2024-06-13 22:05:09 -0300
+Processing by UsersController#gpg_show as PNG
+  Parameters: {"id"=>"warning"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms | Allocations: 854)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=warning):
+  
+app/controllers/users_controller.rb:63:in `gpg_show'
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-13 22:07:58 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.3ms | Allocations: 149)
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 4.4ms | Allocations: 2669)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 2757)
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 8.4ms | Allocations: 11367)
+
+
+  
+ActionView::Template::Error (The asset "warning.png" is not present in the asset pipeline.
+):
+    26: 
+    27: <div id=warn>
+    28:   <h3>Security Alert for Users</h3>
+    29:   <%= image_tag "warning.png" %>
+    30:   <p><strong>Important:</strong> The public key you are viewing will only be displayed once. It is crucial that you keep this key in a safe place, as you will need it to decrypt passwords in the future. If you lose the public key, you will not be able to access the encrypted information later.
+    31: </p>
+    32: <p>The public and private keys provided to you are for your personal and non-transferable use only. To ensure the security of your data, follow these recommendations:</p>
+  
+app/views/users/gpg_show.html.erb:29
+Started POST "/__web_console/repl_sessions/fa22dbe075fcec6b0dde2beddbcb9f6a/trace" for 127.0.0.1 at 2024-06-13 22:08:25 -0300
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-13 22:10:01 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 1.9ms | Allocations: 2077)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 2164)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.3ms | Allocations: 2778)
+
+
+  
+ActionView::Template::Error (The asset "warning.png" is not present in the asset pipeline.
+):
+    26: 
+    27: <div id=warn>
+    28:   <h3>Security Alert for Users</h3>
+    29:   <%= image_tag "warning.png" %>
+    30:   <p><strong>Important:</strong> The public key you are viewing will only be displayed once. It is crucial that you keep this key in a safe place, as you will need it to decrypt passwords in the future. If you lose the public key, you will not be able to access the encrypted information later.
+    31: </p>
+    32: <p>The public and private keys provided to you are for your personal and non-transferable use only. To ensure the security of your data, follow these recommendations:</p>
+  
+app/views/users/gpg_show.html.erb:29
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-13 22:10:45 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 1.6ms | Allocations: 2074)
+  Rendered layout layouts/application.html.erb (Duration: 1.8ms | Allocations: 2161)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.3ms | Allocations: 2775)
+
+
+  
+ActionView::Template::Error (The asset "warning.png" is not present in the asset pipeline.
+):
+    26: 
+    27: <div id=warn>
+    28:   <h3>Security Alert for Users</h3>
+    29:   <%= image_tag "warning.png" %>
+    30:   <p><strong>Important:</strong> The public key you are viewing will only be displayed once. It is crucial that you keep this key in a safe place, as you will need it to decrypt passwords in the future. If you lose the public key, you will not be able to access the encrypted information later.
+    31: </p>
+    32: <p>The public and private keys provided to you are for your personal and non-transferable use only. To ensure the security of your data, follow these recommendations:</p>
+  
+app/views/users/gpg_show.html.erb:29
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-13 22:10:52 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 3.5ms | Allocations: 2074)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 2161)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.1ms | Allocations: 2775)
+
+
+  
+ActionView::Template::Error (The asset "warning.png" is not present in the asset pipeline.
+):
+    26: 
+    27: <div id=warn>
+    28:   <h3>Security Alert for Users</h3>
+    29:   <%= image_tag "warning.png" %>
+    30:   <p><strong>Important:</strong> The public key you are viewing will only be displayed once. It is crucial that you keep this key in a safe place, as you will need it to decrypt passwords in the future. If you lose the public key, you will not be able to access the encrypted information later.
+    31: </p>
+    32: <p>The public and private keys provided to you are for your personal and non-transferable use only. To ensure the security of your data, follow these recommendations:</p>
+  
+app/views/users/gpg_show.html.erb:29
+Started POST "/__web_console/repl_sessions/79852e157a58762884fac94f7c9a523b/trace" for 127.0.0.1 at 2024-06-13 22:10:56 -0300
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-13 22:11:54 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 14.2ms | Allocations: 7366)
+  Rendered layout layouts/application.html.erb (Duration: 15.4ms | Allocations: 7916)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.3ms | Allocations: 8898)
+
+
+  
+ActionView::Template::Error (link_tree argument must be a directory):
+  
+sprockets (4.2.1) lib/sprockets/directive_processor.rb:407:in `expand_relative_dirname'
+sprockets (4.2.1) lib/sprockets/directive_processor.rb:359:in `process_link_tree_directive'
+sprockets (4.2.1) lib/sprockets/directive_processor.rb:189:in `block in process_directives'
+sprockets (4.2.1) lib/sprockets/directive_processor.rb:187:in `each'
+sprockets (4.2.1) lib/sprockets/directive_processor.rb:187:in `process_directives'
+sprockets (4.2.1) lib/sprockets/directive_processor.rb:84:in `_call'
+sprockets (4.2.1) lib/sprockets/directive_processor.rb:65:in `call'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:84:in `call_processor'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:66:in `block in call_processors'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:65:in `reverse_each'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:65:in `call_processors'
+sprockets (4.2.1) lib/sprockets/loader.rb:184:in `load_from_unloaded'
+sprockets (4.2.1) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.2.1) lib/sprockets/loader.rb:339:in `fetch_asset_from_dependency_cache'
+sprockets (4.2.1) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `block in load'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/map.rb:207:in `block in fetch_or_store'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/map.rb:187:in `fetch'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/map.rb:206:in `fetch_or_store'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.2.1) lib/sprockets/bundle.rb:27:in `call'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:84:in `call_processor'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:66:in `block in call_processors'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:65:in `reverse_each'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:65:in `call_processors'
+sprockets (4.2.1) lib/sprockets/loader.rb:184:in `load_from_unloaded'
+sprockets (4.2.1) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.2.1) lib/sprockets/loader.rb:339:in `fetch_asset_from_dependency_cache'
+sprockets (4.2.1) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `block in load'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/map.rb:207:in `block in fetch_or_store'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/map.rb:187:in `fetch'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/map.rb:206:in `fetch_or_store'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.2.1) lib/sprockets/base.rb:81:in `find_asset'
+sprockets (4.2.1) lib/sprockets/base.rb:88:in `find_all_linked_assets'
+sprockets (4.2.1) lib/sprockets/manifest.rb:125:in `each'
+sprockets (4.2.1) lib/sprockets/manifest.rb:125:in `to_a'
+sprockets (4.2.1) lib/sprockets/manifest.rb:125:in `block (2 levels) in find'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:24:in `block in execute'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `block in synchronize'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `synchronize'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `synchronize'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:22:in `execute'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/promise.rb:564:in `block in realize'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:359:in `run_task'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:350:in `block (3 levels) in create_worker'
+<internal:kernel>:187:in `loop'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:341:in `block (2 levels) in create_worker'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:340:in `catch'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:340:in `block in create_worker'
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-13 22:12:13 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.4ms | Allocations: 149)
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1905)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 1993)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 3.0ms | Allocations: 10514)
+
+
+  
+ActionView::Template::Error (The asset "./warning.png" is not present in the asset pipeline.
+):
+    26: 
+    27: <div id=warn>
+    28:   <h3>Security Alert for Users</h3>
+    29:   <%= image_tag "./warning.png" %>
+    30:   <p><strong>Important:</strong> The public key you are viewing will only be displayed once. It is crucial that you keep this key in a safe place, as you will need it to decrypt passwords in the future. If you lose the public key, you will not be able to access the encrypted information later.
+    31: </p>
+    32: <p>The public and private keys provided to you are for your personal and non-transferable use only. To ensure the security of your data, follow these recommendations:</p>
+  
+app/views/users/gpg_show.html.erb:29
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-13 22:12:44 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.5ms | Allocations: 149)
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1899)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 1987)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 3.6ms | Allocations: 10564)
+
+
+  
+ActionView::Template::Error (The asset "./warning.png" is not present in the asset pipeline.
+):
+    26: 
+    27: <div id=warn>
+    28:   <h3>Security Alert for Users</h3>
+    29:   <%= image_tag "./warning.png" %>
+    30:   <p><strong>Important:</strong> The public key you are viewing will only be displayed once. It is crucial that you keep this key in a safe place, as you will need it to decrypt passwords in the future. If you lose the public key, you will not be able to access the encrypted information later.
+    31: </p>
+    32: <p>The public and private keys provided to you are for your personal and non-transferable use only. To ensure the security of your data, follow these recommendations:</p>
+  
+app/views/users/gpg_show.html.erb:29
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-13 22:12:46 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1355)
+  Rendered layout layouts/application.html.erb (Duration: 1.4ms | Allocations: 1442)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms | Allocations: 2056)
+
+
+  
+ActionView::Template::Error (The asset "./warning.png" is not present in the asset pipeline.
+):
+    26: 
+    27: <div id=warn>
+    28:   <h3>Security Alert for Users</h3>
+    29:   <%= image_tag "./warning.png" %>
+    30:   <p><strong>Important:</strong> The public key you are viewing will only be displayed once. It is crucial that you keep this key in a safe place, as you will need it to decrypt passwords in the future. If you lose the public key, you will not be able to access the encrypted information later.
+    31: </p>
+    32: <p>The public and private keys provided to you are for your personal and non-transferable use only. To ensure the security of your data, follow these recommendations:</p>
+  
+app/views/users/gpg_show.html.erb:29
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-13 22:13:46 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.4ms | Allocations: 149)
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 10.4ms | Allocations: 5191)
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | Allocations: 5645)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 2.8ms | Allocations: 14732)
+
+
+  
+ActionView::Template::Error (link_tree argument must be a directory):
+  
+sprockets (4.2.1) lib/sprockets/directive_processor.rb:407:in `expand_relative_dirname'
+sprockets (4.2.1) lib/sprockets/directive_processor.rb:359:in `process_link_tree_directive'
+sprockets (4.2.1) lib/sprockets/directive_processor.rb:189:in `block in process_directives'
+sprockets (4.2.1) lib/sprockets/directive_processor.rb:187:in `each'
+sprockets (4.2.1) lib/sprockets/directive_processor.rb:187:in `process_directives'
+sprockets (4.2.1) lib/sprockets/directive_processor.rb:84:in `_call'
+sprockets (4.2.1) lib/sprockets/directive_processor.rb:65:in `call'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:84:in `call_processor'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:66:in `block in call_processors'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:65:in `reverse_each'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:65:in `call_processors'
+sprockets (4.2.1) lib/sprockets/loader.rb:184:in `load_from_unloaded'
+sprockets (4.2.1) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.2.1) lib/sprockets/loader.rb:339:in `fetch_asset_from_dependency_cache'
+sprockets (4.2.1) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `block in load'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/map.rb:207:in `block in fetch_or_store'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/map.rb:187:in `fetch'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/map.rb:206:in `fetch_or_store'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.2.1) lib/sprockets/bundle.rb:27:in `call'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:84:in `call_processor'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:66:in `block in call_processors'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:65:in `reverse_each'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:65:in `call_processors'
+sprockets (4.2.1) lib/sprockets/loader.rb:184:in `load_from_unloaded'
+sprockets (4.2.1) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.2.1) lib/sprockets/loader.rb:339:in `fetch_asset_from_dependency_cache'
+sprockets (4.2.1) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `block in load'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/map.rb:207:in `block in fetch_or_store'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/map.rb:187:in `fetch'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/map.rb:206:in `fetch_or_store'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.2.1) lib/sprockets/base.rb:81:in `find_asset'
+sprockets (4.2.1) lib/sprockets/base.rb:88:in `find_all_linked_assets'
+sprockets (4.2.1) lib/sprockets/manifest.rb:125:in `each'
+sprockets (4.2.1) lib/sprockets/manifest.rb:125:in `to_a'
+sprockets (4.2.1) lib/sprockets/manifest.rb:125:in `block (2 levels) in find'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:24:in `block in execute'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `block in synchronize'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `synchronize'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `synchronize'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:22:in `execute'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/promise.rb:564:in `block in realize'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:359:in `run_task'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:350:in `block (3 levels) in create_worker'
+<internal:kernel>:187:in `loop'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:341:in `block (2 levels) in create_worker'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:340:in `catch'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:340:in `block in create_worker'
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-13 22:15:00 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.4ms | Allocations: 149)
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1898)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 1986)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 6.0ms | Allocations: 10508)
+
+
+  
+ActionView::Template::Error (The asset "./images/warning.png" is not present in the asset pipeline.
+):
+    26: 
+    27: <div id=warn>
+    28:   <h3>Security Alert for Users</h3>
+    29:   <%= image_tag "./images/warning.png" %>
+    30:   <p><strong>Important:</strong> The public key you are viewing will only be displayed once. It is crucial that you keep this key in a safe place, as you will need it to decrypt passwords in the future. If you lose the public key, you will not be able to access the encrypted information later.
+    31: </p>
+    32: <p>The public and private keys provided to you are for your personal and non-transferable use only. To ensure the security of your data, follow these recommendations:</p>
+  
+app/views/users/gpg_show.html.erb:29
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-13 22:15:15 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.3ms | Allocations: 149)
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1898)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 1986)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 2.9ms | Allocations: 10565)
+
+
+  
+ActionView::Template::Error (The asset "./assets/images/warning.png" is not present in the asset pipeline.
+):
+    26: 
+    27: <div id=warn>
+    28:   <h3>Security Alert for Users</h3>
+    29:   <%= image_tag "./assets/images/warning.png" %>
+    30:   <p><strong>Important:</strong> The public key you are viewing will only be displayed once. It is crucial that you keep this key in a safe place, as you will need it to decrypt passwords in the future. If you lose the public key, you will not be able to access the encrypted information later.
+    31: </p>
+    32: <p>The public and private keys provided to you are for your personal and non-transferable use only. To ensure the security of your data, follow these recommendations:</p>
+  
+app/views/users/gpg_show.html.erb:29
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-13 22:17:38 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.4ms | Allocations: 149)
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1897)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 1985)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 3.1ms | Allocations: 10504)
+
+
+  
+ActionView::Template::Error (The asset "./warning.png" is not present in the asset pipeline.
+):
+    26: 
+    27: <div id=warn>
+    28:   <h3>Security Alert for Users</h3>
+    29:   <%= image_tag "./warning.png" %>
+    30:   <p><strong>Important:</strong> The public key you are viewing will only be displayed once. It is crucial that you keep this key in a safe place, as you will need it to decrypt passwords in the future. If you lose the public key, you will not be able to access the encrypted information later.
+    31: </p>
+    32: <p>The public and private keys provided to you are for your personal and non-transferable use only. To ensure the security of your data, follow these recommendations:</p>
+  
+app/views/users/gpg_show.html.erb:29
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-13 22:18:57 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.4ms | Allocations: 149)
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 1.9ms | Allocations: 977)
+  Rendered layout layouts/application.html.erb (Duration: 12.9ms | Allocations: 5978)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 2.9ms | Allocations: 14865)
+
+
+  
+ActionView::Template::Error (link_tree argument must be a directory):
+  
+sprockets (4.2.1) lib/sprockets/directive_processor.rb:407:in `expand_relative_dirname'
+sprockets (4.2.1) lib/sprockets/directive_processor.rb:359:in `process_link_tree_directive'
+sprockets (4.2.1) lib/sprockets/directive_processor.rb:189:in `block in process_directives'
+sprockets (4.2.1) lib/sprockets/directive_processor.rb:187:in `each'
+sprockets (4.2.1) lib/sprockets/directive_processor.rb:187:in `process_directives'
+sprockets (4.2.1) lib/sprockets/directive_processor.rb:84:in `_call'
+sprockets (4.2.1) lib/sprockets/directive_processor.rb:65:in `call'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:84:in `call_processor'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:66:in `block in call_processors'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:65:in `reverse_each'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:65:in `call_processors'
+sprockets (4.2.1) lib/sprockets/loader.rb:184:in `load_from_unloaded'
+sprockets (4.2.1) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.2.1) lib/sprockets/loader.rb:339:in `fetch_asset_from_dependency_cache'
+sprockets (4.2.1) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `block in load'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/map.rb:207:in `block in fetch_or_store'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/map.rb:187:in `fetch'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/map.rb:206:in `fetch_or_store'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.2.1) lib/sprockets/bundle.rb:27:in `call'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:84:in `call_processor'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:66:in `block in call_processors'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:65:in `reverse_each'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:65:in `call_processors'
+sprockets (4.2.1) lib/sprockets/loader.rb:184:in `load_from_unloaded'
+sprockets (4.2.1) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.2.1) lib/sprockets/loader.rb:339:in `fetch_asset_from_dependency_cache'
+sprockets (4.2.1) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `block in load'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/map.rb:207:in `block in fetch_or_store'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/map.rb:187:in `fetch'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/map.rb:206:in `fetch_or_store'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.2.1) lib/sprockets/base.rb:81:in `find_asset'
+sprockets (4.2.1) lib/sprockets/base.rb:88:in `find_all_linked_assets'
+sprockets (4.2.1) lib/sprockets/manifest.rb:125:in `each'
+sprockets (4.2.1) lib/sprockets/manifest.rb:125:in `to_a'
+sprockets (4.2.1) lib/sprockets/manifest.rb:125:in `block (2 levels) in find'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:24:in `block in execute'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `block in synchronize'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `synchronize'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `synchronize'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:22:in `execute'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/promise.rb:564:in `block in realize'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:359:in `run_task'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:350:in `block (3 levels) in create_worker'
+<internal:kernel>:187:in `loop'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:341:in `block (2 levels) in create_worker'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:340:in `catch'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:340:in `block in create_worker'
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-13 22:20:51 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.4ms | Allocations: 149)
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 2.9ms | Allocations: 2773)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 2861)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 2.4ms | Allocations: 11380)
+
+
+  
+ActionView::Template::Error (The asset "#" is not present in the asset pipeline.
+):
+    26: 
+    27: <div id=warn>
+    28:   <h3>Security Alert for Users</h3>
+    29:   <%= image_tag "#" %>
+    30:   <p><strong>Important:</strong> The public key you are viewing will only be displayed once. It is crucial that you keep this key in a safe place, as you will need it to decrypt passwords in the future. If you lose the public key, you will not be able to access the encrypted information later.
+    31: </p>
+    32: <p>The public and private keys provided to you are for your personal and non-transferable use only. To ensure the security of your data, follow these recommendations:</p>
+  
+app/views/users/gpg_show.html.erb:29
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-13 22:21:00 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1401)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 1514)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 3.3ms | Allocations: 10175)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <p style="color: green"><%= notice %></p>
+
+<h1>Public GPG Keys</h1>
+
+<div id="users">
+  <%= render @user %>
+    <% unless @user.gpg_key_id? %>
+      <%#= link_to "Create new GPG Key for this user", @user %>
+      <a href="#" onclick="pgpGenerateKey('<%= @user.name %> <%= @user.lastname %>', '<%= @user.email %>', 'passphrase');">Create new GPG Key for this user</a>
+      <h3>Generated Public Key</h3><a href="#" onclick="copyToClipboard('pubKey');">Copy to clipboard</a>
+      <div>
+        <textarea id=pubKey placeholder="Your public key will be displayed here" readonly="" style="font-family: monospace; width: 469px; height: 144px;"></textarea>
+      </div>
+      <br>
+      <h3>Generated Private Key</h3>
+      <a href="#" onclick="copyToClipboard('privKey');">Copy to clipboard</a>
+      <div>
+        <textarea id=privKey placeholder="Your private key will be displayed here" readonly="" style="font-family: monospace; width: 469px; height: 144px;"></textarea>
+      </div>
+    <% else %>
+      <h1>GPG Certificate</h1>
+      <pre><%= @user.gpg_key.gpg_public_key %></pre>
+      <%= link_to "Delete GPG Key for this user", @user %>
+    <% end %>
+</div>
+
+<div id=warn>
+  <h3>Security Alert for Users</h3>
+  <%= image_tag # %>
+  <p><strong>Important:</strong> The public key you are viewing will only be displayed once. It is crucial that you keep this key in a safe place, as you will need it to decrypt passwords in the future. If you lose the public key, you will not be able to access the encrypted information later.
+</p>
+<p>The public and private keys provided to you are for your personal and non-transferable use only. To ensure the security of your data, follow these recommendations:</p>
+<ol>
+  <li><strong>Secure Storage:</strong> Store both passwords in a secure location that is difficult for others to access. The use of secure password managers or encrypted storage devices is recommended.</li>
+  <li><strong>Do Not Share:</strong> Never share your private key with anyone. The private key is the only way to access encrypted information and must be kept absolutely secret.</li>
+  <li><strong>Backup:</strong> Make backup copies of both keys and store them in different locations to prevent loss due to hardware failure or unauthorized access.</li>
+  <li><strong>Controlled Access:</strong> Make sure that only you have access to the devices or platforms where you store the keys. Use multi-factor authentication (MFA) for additional security.</li>
+  <li><strong>Regular Update:</strong> Regularly review and update your storage and security methods to ensure you are using the best practices available.</li>
+</ol>
+<p>Your responsibility in the secure handling of these keys is critical to protecting the integrity and confidentiality of your encrypted data.</p>
+</div>
+
+<%= link_to "Back", user_path(@user) %>
+
+
+):
+1:    <p style="color: green"><%= notice %></p>
+2:    
+3:    <h1>Public GPG Keys</h1>
+4:    
+5:    <div id="users">
+6:      <%= render @user %>
+7:        <% unless @user.gpg_key_id? %>
+8:          <%#= link_to "Create new GPG Key for this user", @user %>
+9:          <a href="#" onclick="pgpGenerateKey('<%= @user.name %> <%= @user.lastname %>', '<%= @user.email %>', 'passphrase');">Create new GPG Key for this user</a>
+10:          <h3>Generated Public Key</h3><a href="#" onclick="copyToClipboard('pubKey');">Copy to clipboard</a>
+11:          <div>
+12:            <textarea id=pubKey placeholder="Your public key will be displayed here" readonly="" style="font-family: monospace; width: 469px; height: 144px;"></textarea>
+13:          </div>
+14:          <br>
+15:          <h3>Generated Private Key</h3>
+16:          <a href="#" onclick="copyToClipboard('privKey');">Copy to clipboard</a>
+17:          <div>
+18:            <textarea id=privKey placeholder="Your private key will be displayed here" readonly="" style="font-family: monospace; width: 469px; height: 144px;"></textarea>
+19:          </div>
+20:        <% else %>
+21:          <h1>GPG Certificate</h1>
+22:          <pre><%= @user.gpg_key.gpg_public_key %></pre>
+23:          <%= link_to "Delete GPG Key for this user", @user %>
+24:        <% end %>
+25:    </div>
+26:    
+27:    <div id=warn>
+28:      <h3>Security Alert for Users</h3>
+29:      <%= image_tag # %>
+30:      <p><strong>Important:</strong> The public key you are viewing will only be displayed once. It is crucial that you keep this key in a safe place, as you will need it to decrypt passwords in the future. If you lose the public key, you will not be able to access the encrypted information later.
+31:    </p>
+32:    <p>The public and private keys provided to you are for your personal and non-transferable use only. To ensure the security of your data, follow these recommendations:</p>
+33:    <ol>
+34:      <li><strong>Secure Storage:</strong> Store both passwords in a secure location that is difficult for others to access. The use of secure password managers or encrypted storage devices is recommended.</li>
+35:      <li><strong>Do Not Share:</strong> Never share your private key with anyone. The private key is the only way to access encrypted information and must be kept absolutely secret.</li>
+36:      <li><strong>Backup:</strong> Make backup copies of both keys and store them in different locations to prevent loss due to hardware failure or unauthorized access.</li>
+37:      <li><strong>Controlled Access:</strong> Make sure that only you have access to the devices or platforms where you store the keys. Use multi-factor authentication (MFA) for additional security.</li>
+38:      <li><strong>Regular Update:</strong> Regularly review and update your storage and security methods to ensure you are using the best practices available.</li>
+39:    </ol>
+40:    <p>Your responsibility in the secure handling of these keys is critical to protecting the integrity and confidentiality of your encrypted data.</p>
+41:    </div>
+42:    
+43:    <%= link_to "Back", user_path(@user) %>
+  
+app/views/users/gpg_show.html.erb:30: syntax error, unexpected '<'
+app/views/users/gpg_show.html.erb:34: unknown regexp options - trg
+app/views/users/gpg_show.html.erb:35: unknown regexp option - l
+app/views/users/gpg_show.html.erb:37: unknown regexp option - l
+app/views/users/gpg_show.html.erb:38: unknown regexp option - l
+app/views/users/gpg_show.html.erb:40: unknown regexp option - p
+app/views/users/gpg_show.html.erb:47: unterminated regexp meets end of file
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-13 22:21:09 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 1.0ms | Allocations: 149)
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 11.9ms | Allocations: 1777)
+  Rendered layout layouts/application.html.erb (Duration: 12.2ms | Allocations: 1865)
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 3.4ms | Allocations: 10443)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 0, expected 1..2)):
+    26: 
+    27: <div id=warn>
+    28:   <h3>Security Alert for Users</h3>
+    29:   <%= image_tag %>
+    30:   <p><strong>Important:</strong> The public key you are viewing will only be displayed once. It is crucial that you keep this key in a safe place, as you will need it to decrypt passwords in the future. If you lose the public key, you will not be able to access the encrypted information later.
+    31: </p>
+    32: <p>The public and private keys provided to you are for your personal and non-transferable use only. To ensure the security of your data, follow these recommendations:</p>
+  
+app/views/users/gpg_show.html.erb:29
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-13 22:21:17 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.5ms | Allocations: 149)
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 2.4ms | Allocations: 956)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 5960)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 3.9ms | Allocations: 14902)
+
+
+  
+ActionView::Template::Error (link_tree argument must be a directory):
+  
+sprockets (4.2.1) lib/sprockets/directive_processor.rb:407:in `expand_relative_dirname'
+sprockets (4.2.1) lib/sprockets/directive_processor.rb:359:in `process_link_tree_directive'
+sprockets (4.2.1) lib/sprockets/directive_processor.rb:189:in `block in process_directives'
+sprockets (4.2.1) lib/sprockets/directive_processor.rb:187:in `each'
+sprockets (4.2.1) lib/sprockets/directive_processor.rb:187:in `process_directives'
+sprockets (4.2.1) lib/sprockets/directive_processor.rb:84:in `_call'
+sprockets (4.2.1) lib/sprockets/directive_processor.rb:65:in `call'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:84:in `call_processor'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:66:in `block in call_processors'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:65:in `reverse_each'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:65:in `call_processors'
+sprockets (4.2.1) lib/sprockets/loader.rb:184:in `load_from_unloaded'
+sprockets (4.2.1) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.2.1) lib/sprockets/loader.rb:339:in `fetch_asset_from_dependency_cache'
+sprockets (4.2.1) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `block in load'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/map.rb:207:in `block in fetch_or_store'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/map.rb:187:in `fetch'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/map.rb:206:in `fetch_or_store'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.2.1) lib/sprockets/bundle.rb:27:in `call'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:84:in `call_processor'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:66:in `block in call_processors'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:65:in `reverse_each'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:65:in `call_processors'
+sprockets (4.2.1) lib/sprockets/loader.rb:184:in `load_from_unloaded'
+sprockets (4.2.1) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.2.1) lib/sprockets/loader.rb:339:in `fetch_asset_from_dependency_cache'
+sprockets (4.2.1) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `block in load'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/map.rb:207:in `block in fetch_or_store'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/map.rb:187:in `fetch'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/map.rb:206:in `fetch_or_store'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.2.1) lib/sprockets/base.rb:81:in `find_asset'
+sprockets (4.2.1) lib/sprockets/base.rb:88:in `find_all_linked_assets'
+sprockets (4.2.1) lib/sprockets/manifest.rb:125:in `each'
+sprockets (4.2.1) lib/sprockets/manifest.rb:125:in `to_a'
+sprockets (4.2.1) lib/sprockets/manifest.rb:125:in `block (2 levels) in find'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:24:in `block in execute'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `block in synchronize'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `synchronize'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `synchronize'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:22:in `execute'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/promise.rb:564:in `block in realize'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:359:in `run_task'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:350:in `block (3 levels) in create_worker'
+<internal:kernel>:187:in `loop'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:341:in `block (2 levels) in create_worker'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:340:in `catch'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:340:in `block in create_worker'
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-13 22:22:18 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 2.0ms | Allocations: 189)
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 57.4ms | Allocations: 2589)
+  Rendered layout layouts/application.html.erb (Duration: 80.3ms | Allocations: 10023)
+Completed 500 Internal Server Error in 195ms (ActiveRecord: 11.7ms | Allocations: 41238)
+
+
+  
+ActionView::Template::Error (link_tree argument must be a directory):
+  
+sprockets (4.2.1) lib/sprockets/directive_processor.rb:407:in `expand_relative_dirname'
+sprockets (4.2.1) lib/sprockets/directive_processor.rb:359:in `process_link_tree_directive'
+sprockets (4.2.1) lib/sprockets/directive_processor.rb:189:in `block in process_directives'
+sprockets (4.2.1) lib/sprockets/directive_processor.rb:187:in `each'
+sprockets (4.2.1) lib/sprockets/directive_processor.rb:187:in `process_directives'
+sprockets (4.2.1) lib/sprockets/directive_processor.rb:84:in `_call'
+sprockets (4.2.1) lib/sprockets/directive_processor.rb:65:in `call'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:84:in `call_processor'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:66:in `block in call_processors'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:65:in `reverse_each'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:65:in `call_processors'
+sprockets (4.2.1) lib/sprockets/loader.rb:184:in `load_from_unloaded'
+sprockets (4.2.1) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.2.1) lib/sprockets/loader.rb:339:in `fetch_asset_from_dependency_cache'
+sprockets (4.2.1) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `block in load'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/map.rb:207:in `block in fetch_or_store'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/map.rb:187:in `fetch'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/map.rb:206:in `fetch_or_store'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.2.1) lib/sprockets/bundle.rb:27:in `call'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:84:in `call_processor'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:66:in `block in call_processors'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:65:in `reverse_each'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:65:in `call_processors'
+sprockets (4.2.1) lib/sprockets/loader.rb:184:in `load_from_unloaded'
+sprockets (4.2.1) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.2.1) lib/sprockets/loader.rb:339:in `fetch_asset_from_dependency_cache'
+sprockets (4.2.1) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `block in load'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/map.rb:207:in `block in fetch_or_store'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/map.rb:187:in `fetch'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/map.rb:206:in `fetch_or_store'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.2.1) lib/sprockets/base.rb:81:in `find_asset'
+sprockets (4.2.1) lib/sprockets/base.rb:88:in `find_all_linked_assets'
+sprockets (4.2.1) lib/sprockets/manifest.rb:125:in `each'
+sprockets (4.2.1) lib/sprockets/manifest.rb:125:in `to_a'
+sprockets (4.2.1) lib/sprockets/manifest.rb:125:in `block (2 levels) in find'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:24:in `block in execute'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `block in synchronize'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `synchronize'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `synchronize'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:22:in `execute'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/promise.rb:564:in `block in realize'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:359:in `run_task'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:350:in `block (3 levels) in create_worker'
+<internal:kernel>:187:in `loop'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:341:in `block (2 levels) in create_worker'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:340:in `catch'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:340:in `block in create_worker'
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-13 22:23:33 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.4ms | Allocations: 187)
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 7.5ms | Allocations: 2543)
+  Rendered layout layouts/application.html.erb (Duration: 24.3ms | Allocations: 9994)
+Completed 500 Internal Server Error in 119ms (ActiveRecord: 11.8ms | Allocations: 41194)
+
+
+  
+ActionView::Template::Error (link_tree argument must be a directory):
+  
+sprockets (4.2.1) lib/sprockets/directive_processor.rb:407:in `expand_relative_dirname'
+sprockets (4.2.1) lib/sprockets/directive_processor.rb:359:in `process_link_tree_directive'
+sprockets (4.2.1) lib/sprockets/directive_processor.rb:189:in `block in process_directives'
+sprockets (4.2.1) lib/sprockets/directive_processor.rb:187:in `each'
+sprockets (4.2.1) lib/sprockets/directive_processor.rb:187:in `process_directives'
+sprockets (4.2.1) lib/sprockets/directive_processor.rb:84:in `_call'
+sprockets (4.2.1) lib/sprockets/directive_processor.rb:65:in `call'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:84:in `call_processor'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:66:in `block in call_processors'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:65:in `reverse_each'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:65:in `call_processors'
+sprockets (4.2.1) lib/sprockets/loader.rb:184:in `load_from_unloaded'
+sprockets (4.2.1) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.2.1) lib/sprockets/loader.rb:339:in `fetch_asset_from_dependency_cache'
+sprockets (4.2.1) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `block in load'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/map.rb:207:in `block in fetch_or_store'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/map.rb:187:in `fetch'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/map.rb:206:in `fetch_or_store'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.2.1) lib/sprockets/bundle.rb:27:in `call'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:84:in `call_processor'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:66:in `block in call_processors'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:65:in `reverse_each'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:65:in `call_processors'
+sprockets (4.2.1) lib/sprockets/loader.rb:184:in `load_from_unloaded'
+sprockets (4.2.1) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.2.1) lib/sprockets/loader.rb:339:in `fetch_asset_from_dependency_cache'
+sprockets (4.2.1) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `block in load'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/map.rb:207:in `block in fetch_or_store'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/map.rb:187:in `fetch'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/map.rb:206:in `fetch_or_store'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.2.1) lib/sprockets/base.rb:81:in `find_asset'
+sprockets (4.2.1) lib/sprockets/base.rb:88:in `find_all_linked_assets'
+sprockets (4.2.1) lib/sprockets/manifest.rb:125:in `each'
+sprockets (4.2.1) lib/sprockets/manifest.rb:125:in `to_a'
+sprockets (4.2.1) lib/sprockets/manifest.rb:125:in `block (2 levels) in find'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:24:in `block in execute'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `block in synchronize'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `synchronize'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `synchronize'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:22:in `execute'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/promise.rb:564:in `block in realize'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:359:in `run_task'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:350:in `block (3 levels) in create_worker'
+<internal:kernel>:187:in `loop'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:341:in `block (2 levels) in create_worker'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:340:in `catch'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:340:in `block in create_worker'
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-13 22:23:38 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 315)
+  Rendered layout layouts/application.html.erb (Duration: 9.5ms | Allocations: 5095)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.3ms | Allocations: 6094)
+
+
+  
+ActionView::Template::Error (link_tree argument must be a directory):
+  
+sprockets (4.2.1) lib/sprockets/directive_processor.rb:407:in `expand_relative_dirname'
+sprockets (4.2.1) lib/sprockets/directive_processor.rb:359:in `process_link_tree_directive'
+sprockets (4.2.1) lib/sprockets/directive_processor.rb:189:in `block in process_directives'
+sprockets (4.2.1) lib/sprockets/directive_processor.rb:187:in `each'
+sprockets (4.2.1) lib/sprockets/directive_processor.rb:187:in `process_directives'
+sprockets (4.2.1) lib/sprockets/directive_processor.rb:84:in `_call'
+sprockets (4.2.1) lib/sprockets/directive_processor.rb:65:in `call'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:84:in `call_processor'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:66:in `block in call_processors'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:65:in `reverse_each'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:65:in `call_processors'
+sprockets (4.2.1) lib/sprockets/loader.rb:184:in `load_from_unloaded'
+sprockets (4.2.1) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.2.1) lib/sprockets/loader.rb:339:in `fetch_asset_from_dependency_cache'
+sprockets (4.2.1) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `block in load'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/map.rb:207:in `block in fetch_or_store'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/map.rb:187:in `fetch'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/map.rb:206:in `fetch_or_store'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.2.1) lib/sprockets/bundle.rb:27:in `call'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:84:in `call_processor'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:66:in `block in call_processors'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:65:in `reverse_each'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:65:in `call_processors'
+sprockets (4.2.1) lib/sprockets/loader.rb:184:in `load_from_unloaded'
+sprockets (4.2.1) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.2.1) lib/sprockets/loader.rb:339:in `fetch_asset_from_dependency_cache'
+sprockets (4.2.1) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `block in load'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/map.rb:207:in `block in fetch_or_store'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/map.rb:187:in `fetch'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/map.rb:206:in `fetch_or_store'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.2.1) lib/sprockets/base.rb:81:in `find_asset'
+sprockets (4.2.1) lib/sprockets/base.rb:88:in `find_all_linked_assets'
+sprockets (4.2.1) lib/sprockets/manifest.rb:125:in `each'
+sprockets (4.2.1) lib/sprockets/manifest.rb:125:in `to_a'
+sprockets (4.2.1) lib/sprockets/manifest.rb:125:in `block (2 levels) in find'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:24:in `block in execute'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `block in synchronize'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `synchronize'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `synchronize'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:22:in `execute'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/promise.rb:564:in `block in realize'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:359:in `run_task'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:350:in `block (3 levels) in create_worker'
+<internal:kernel>:187:in `loop'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:341:in `block (2 levels) in create_worker'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:340:in `catch'
+concurrent-ruby (1.2.3) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:340:in `block in create_worker'
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-13 22:24:53 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.0ms | Allocations: 20)
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 313)
+  Rendered layout layouts/application.html.erb (Duration: 54.0ms | Allocations: 21750)
+Completed 200 OK in 56ms (Views: 54.7ms | ActiveRecord: 0.3ms | Allocations: 22448)
+
+
+Started GET "/users/gpg_show/4" for 127.0.0.1 at 2024-06-13 22:24:56 -0300
+Processing by UsersController#gpg_show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:63:in `gpg_show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/gpg_show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered users/gpg_show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 316)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 2495)
+Completed 200 OK in 7ms (Views: 3.6ms | ActiveRecord: 0.6ms | Allocations: 3142)
+
+

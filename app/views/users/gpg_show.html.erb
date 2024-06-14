@@ -3,15 +3,42 @@
 <h1>Public GPG Keys</h1>
 
 <div id="users">
-  <p><%= render @user %>
+  <%= render @user %>
     <% unless @user.gpg_key_id? %>
-      <%= link_to "Create new GPG Key for this user", @user %>
+      <%#= link_to "Create new GPG Key for this user", @user %>
+      <a href="#" onclick="pgpGenerateKey('<%= @user.name %> <%= @user.lastname %>', '<%= @user.email %>', 'passphrase');">Create new GPG Key for this user</a>
+      <h3>Generated Public Key</h3><a href="#" onclick="copyToClipboard('pubKey');">Copy to clipboard</a>
+      <div>
+        <textarea id=pubKey placeholder="Your public key will be displayed here" readonly="" style="font-family: monospace; width: 469px; height: 144px;"></textarea>
+      </div>
+      <br>
+      <h3>Generated Private Key</h3>
+      <a href="#" onclick="copyToClipboard('privKey');">Copy to clipboard</a>
+      <div>
+        <textarea id=privKey placeholder="Your private key will be displayed here" readonly="" style="font-family: monospace; width: 469px; height: 144px;"></textarea>
+      </div>
     <% else %>
       <h1>GPG Certificate</h1>
       <pre><%= @user.gpg_key.gpg_public_key %></pre>
       <%= link_to "Delete GPG Key for this user", @user %>
     <% end %>
-  </p>
+</div>
+
+<div id=warn>
+  <h3>Security Alert for Users</h3>
+
+  <p><strong>Important:</strong> The public key you are viewing will only be displayed once. It is crucial that you keep this key in a safe place, as you will need it to decrypt passwords in the future. If you lose the public key, you will not be able to access the encrypted information later.
+</p>
+<p>The public and private keys provided to you are for your personal and non-transferable use only. To ensure the security of your data, follow these recommendations:</p>
+<ol>
+  <li><strong>Secure Storage:</strong> Store both passwords in a secure location that is difficult for others to access. The use of secure password managers or encrypted storage devices is recommended.</li>
+  <li><strong>Do Not Share:</strong> Never share your private key with anyone. The private key is the only way to access encrypted information and must be kept absolutely secret.</li>
+  <li><strong>Backup:</strong> Make backup copies of both keys and store them in different locations to prevent loss due to hardware failure or unauthorized access.</li>
+  <li><strong>Controlled Access:</strong> Make sure that only you have access to the devices or platforms where you store the keys. Use multi-factor authentication (MFA) for additional security.</li>
+  <li><strong>Regular Update:</strong> Regularly review and update your storage and security methods to ensure you are using the best practices available.</li>
+</ol>
+<p>Your responsibility in the secure handling of these keys is critical to protecting the integrity and confidentiality of your encrypted data.</p>
 </div>
 
 <%= link_to "Back", user_path(@user) %>
+

@@ -13,3 +13,35 @@
  *= require_tree .
  *= require_self
  */
+/* Estilo para el cuerpo del documento */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #d2b48c; /* Marrón claro */
+  font-family: Arial, sans-serif;
+}
+
+/* Contenedor principal centrado */
+.container {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* Recuadro central */
+.content-box {
+  background-color: white; /* Color blanco dentro del recuadro */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 800px; /* Ajusta el ancho máximo según tus necesidades */
+  width: 100%;
+  margin: 20px;
+  box-sizing: border-box;
+}
