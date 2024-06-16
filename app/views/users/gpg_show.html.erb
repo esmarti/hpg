@@ -1,34 +1,44 @@
 <p style="color: green"><%= notice %></p>
 
 <h1>Public GPG Keys</h1>
-
 <div id="users">
   <%= render @user %>
-    <% unless @user.gpg_key_id? %>
-      <%#= link_to "Create new GPG Key for this user", @user %>
+    <% unless @user.gpg_key_id? %> <!-- the user has no GPG key -->
       <a href="#" onclick="pgpGenerateKey('<%= @user.name %> <%= @user.lastname %>', '<%= @user.email %>', 'passphrase');">Create new GPG Key for this user</a>
-      <h3>Generated Public Key</h3><a href="#" onclick="copyToClipboard('pubKey');">Copy to clipboard</a>
+      
+      <%= form_with url: users_gpg_update_path(@user) do |form| %>
+      <h3>Generated Public Key</h3>
+      <a href="#" onclick="copyToClipboard('pubKey');">Copy to clipboard</a>
       <div>
-        <textarea id=pubKey placeholder="Your public key will be displayed here" readonly="" style="font-family: monospace; width: 469px; height: 144px;"></textarea>
+        <%= form.text_area :pubKey, class: "textArea_key", placeholder: "Your public key will be displayed here" %>
       </div>
+        <%= form.submit value: "Update GPG Key" %>
+      <% end %>
       <br>
       <h3>Generated Private Key</h3>
       <a href="#" onclick="copyToClipboard('privKey');">Copy to clipboard</a>
       <div>
-        <textarea id=privKey placeholder="Your private key will be displayed here" readonly="" style="font-family: monospace; width: 469px; height: 144px;"></textarea>
+        <textarea id=privKey placeholder="Your private key will be displayed here" class="textArea_key"></textarea>
       </div>
-    <% else %>
+    <% else %> <!-- the user has a GPG key -->
       <h1>GPG Certificate</h1>
-      <pre><%= @user.gpg_key.gpg_public_key %></pre>
-      <%= link_to "Delete GPG Key for this user", @user %>
+      <a href="#" onclick="copyToClipboard('pubKey');">Copy to clipboard</a>
+      <div>
+        <textarea id=pubKey placeholder="Your public key will be displayed here" class="textArea_key"><%= @user.gpg_key.gpg_public_key %></textarea>
+      </div>
+      <%= button_to "Delete GPG Key for this user", users_gpg_destroy_path(@user), method: :delete, data: { turbo_confirm: "Are you sure you want to submit?" } %>
     <% end %>
 </div>
 
-<div id=warn>
+<div>
   <h3>Security Alert for Users</h3>
 
+<% unless @user.gpg_key_id? %>
+  <%= image_tag "warning.png", alt: "Warning Sign", class: "sign-image" %>
   <p><strong>Important:</strong> The public key you are viewing will only be displayed once. It is crucial that you keep this key in a safe place, as you will need it to decrypt passwords in the future. If you lose the public key, you will not be able to access the encrypted information later.
-</p>
+  </p>
+<% end %>
+
 <p>The public and private keys provided to you are for your personal and non-transferable use only. To ensure the security of your data, follow these recommendations:</p>
 <ol>
   <li><strong>Secure Storage:</strong> Store both passwords in a secure location that is difficult for others to access. The use of secure password managers or encrypted storage devices is recommended.</li>
@@ -37,8 +47,8 @@
   <li><strong>Controlled Access:</strong> Make sure that only you have access to the devices or platforms where you store the keys. Use multi-factor authentication (MFA) for additional security.</li>
   <li><strong>Regular Update:</strong> Regularly review and update your storage and security methods to ensure you are using the best practices available.</li>
 </ol>
+<%= image_tag "information.png", alt: "Information Sign", class: "sign-image" %>
 <p>Your responsibility in the secure handling of these keys is critical to protecting the integrity and confidentiality of your encrypted data.</p>
 </div>
 
 <%= link_to "Back", user_path(@user) %>
-

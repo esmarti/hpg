@@ -13,7 +13,9 @@
  *= require_tree .
  *= require_self
  */
-/* Estilo para el cuerpo del documento */
+
+/* App Layout
+Estilo para el cuerpo del documento */
 body {
   margin: 0;
   padding: 0;
@@ -44,4 +46,19 @@ body {
   width: 100%;
   margin: 20px;
   box-sizing: border-box;
+}
+/*Fin App Layout*/
+
+.sign-image {
+  width: 50px;      /* Ancho de la imagen */
+  float: left;
+  border: none;
+  margin-right: 10px;
+}
+
+.textArea_key {
+  font-family: monospace;
+  width: 469px;
+  height: 144px;
+  readonly;
 }

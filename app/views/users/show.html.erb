@@ -4,7 +4,7 @@
 
 <div>
   <%= link_to "Edit this user", edit_user_path(@user) %> |
-  <%= link_to "Back to users", users_path %>
-  <%= link_to "Configure GPG certificate", :controller => "users", :action => "gpg_show", :id => @user %>
-  <%= button_to "Destroy this user", @user, method: :delete %>
+  <%= link_to "Back to users", users_path %> |
+  <%= link_to "Show details GPG certificate", :controller => "users", :action => "gpg_show", :id => @user %>
+  <%#= button_to "Destroy this user", @user, method: :delete %>
 </div>
