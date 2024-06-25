@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
-  resources :teams
-  resources :credentials
-  resources :users
+
+  namespace :admin do
+    resources :users, :teams
+  end
+
+  resources :users, only: [:new, :index, :edit, :show, :update, :gpg_show, :gpg_update, :gpg_destroy] do
+    resources :credentials
+    resources :teams
+  end
+
   get 'users/gpg_show/:id' => 'users#gpg_show', as: :users_gpg_show
   post 'users/gpg_update/:id' => 'users#gpg_update', as: :users_gpg_update
   delete 'users/gpg_destroy/:id' => 'users#gpg_destroy', as: :users_gpg_destroy

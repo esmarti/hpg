@@ -4,10 +4,12 @@ class TeamsController < ApplicationController
   # GET /teams or /teams.json
   def index
     @teams = Team.all
+    @user = User.find(params[:user_id])
   end
 
   # GET /teams/1 or /teams/1.json
   def show
+    @user = User.find(params[:user_id])
   end
 
   # GET /teams/new
@@ -17,6 +19,7 @@ class TeamsController < ApplicationController
 
   # GET /teams/1/edit
   def edit
+    @user = User.find(params[:user_id])
   end
 
   # POST /teams or /teams.json

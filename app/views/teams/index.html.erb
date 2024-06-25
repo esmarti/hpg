@@ -6,9 +6,9 @@
   <% @teams.each do |team| %>
     <%= render team %>
     <p>
-      <%= link_to "Show this team", team %>
+      <%= link_to "Show this team", user_team_path(id:team.id, user_id:@user) %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New team", new_team_path %>
+<%#= link_to "New team", new_team_path %>

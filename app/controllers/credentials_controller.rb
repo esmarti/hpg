@@ -2,17 +2,22 @@ class CredentialsController < ApplicationController
   before_action :set_credential, only: %i[ show edit update destroy ]
 
   # GET /credentials or /credentials.json
+  # show all credentials of selected user
   def index
-    @credentials = Credential.all
+    @user = User.find(params[:user_id])
+    @credentials = @user.owned_credentials
   end
 
   # GET /credentials/1 or /credentials/1.json
   def show
+    @credential = Credential.find(params[:id])
+    @user = @credential.owner
   end
 
   # GET /credentials/new
   def new
-    @credential = Credential.new
+    @user = User.find(params[:user_id])
+    @credential = @user.owned_credentials.build
   end
 
   # GET /credentials/1/edit
@@ -22,7 +27,10 @@ class CredentialsController < ApplicationController
   # POST /credentials or /credentials.json
   def create
     @credential = Credential.new(credential_params)
-
+    @user = User.find(params[:user_id])
+    @credential.owner = User.find(params[:user_id])
+    @teamArr = Team.all.to_a
+    
     respond_to do |format|
       if @credential.save
         format.html { redirect_to credential_url(@credential), notice: "Credential was successfully created." }
@@ -52,7 +60,7 @@ class CredentialsController < ApplicationController
     @credential.destroy!
 
     respond_to do |format|
-      format.html { redirect_to credentials_url, notice: "Credential was successfully destroyed." }
+      format.html { redirect_to user_credentials_url(@credential.owner), notice: "Credential was successfully destroyed." }
       format.json { head :no_content }
     end
   end
@@ -65,6 +73,6 @@ class CredentialsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def credential_params
-      params.fetch(:credential, {})
+      params.require(:credential).permit(:username, :pass, :description, :team_id)
     end
 end
