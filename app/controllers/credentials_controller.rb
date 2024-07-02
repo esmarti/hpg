@@ -11,9 +11,9 @@ class CredentialsController < ApplicationController
 
   # GET /credentials/1 or /credentials/1.json
   def show
-    @page_libs = [:pgpKeyGenerate]
+    @page_libs = [:openpgp, :pgpKeyDecrypt]
     @credential = Credential.find(params[:id])
-    @user = @credential.owner
+    @user = User.find(params[:user_id])
   end
 
   # GET /credentials/new

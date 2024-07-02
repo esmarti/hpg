@@ -13,6 +13,9 @@
     <%- if @page_libs&.include?(:pgpKeyGenerate) %>
       <%= javascript_include_tag 'pgpKeyGenerate', 'data-turbo-track': 'reload', defer: true %>
     <% end -%>
+    <%- if @page_libs&.include?(:pgpKeyDecrypt) %>
+      <%= javascript_include_tag 'pgpKeyDecrypt', 'data-turbo-track': 'reload', defer: true %>
+    <% end -%>
   </head>
 
   <body>
