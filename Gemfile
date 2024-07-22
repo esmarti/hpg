@@ -2,6 +2,12 @@ source "https://rubygems.org"
 
 ruby "3.3.1"
 
+# Devise 4.9.4 is currently the most popular web authentication library for Rails. Required for HPG @esmarti
+gem 'devise', '~> 4.9'
+
+# Ruby language binding of GPGME (GnuPG Made Easy). Required for HPG @esmarti
+gem "gpgme", '~> 2.0.24'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.3", ">= 7.1.3.2"
 
@@ -13,9 +19,6 @@ gem "pg", "~> 1.1"
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
-
-# Ruby language binding of GPGME (GnuPG Made Easy)
-gem "gpgme"
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"

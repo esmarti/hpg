@@ -3,9 +3,32 @@ require "active_support/core_ext/integer/time"
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
-  # Allow valid hostnames
-  config.hosts << "www.hpg-tf2024.ar:3000"
+  # Modifications made for HPG @esmarti
+    #Set up default URL for action_mailer (devise requirement)
+    config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+    # For production, use your actual host and protocol
+    # config.action_mailer.default_url_options = { host: 'example.com', protocol: 'https' }
+
+    # Allow valid hostnames
+     config.hosts << "www.hpg-tf2024.ar:3000"
   
+    # Set up mail delivery method and settings
+    config.action_mailer.perform_deliveries = true
+    config.action_mailer.raise_delivery_errors = true
+    config.action_mailer.default charset: 'utf-8'
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.smtp_settings = {
+      address: 'smtp.gmail.com',
+      port: 587,
+      domain: 'HivePassGuard',
+      user_name: ENV['HPG_EMAIL_USERNAME'],
+      password: ENV['HPG_EMAIL_PASSWORD'],
+      authentication: 'plain',
+      enable_starttls: true,
+      open_timeout: 5,
+      read_timeout: 5
+    }
+
   # In the development environment your application's code is reloaded any time
   # it changes. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.

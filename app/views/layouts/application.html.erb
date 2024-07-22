@@ -16,11 +16,16 @@
     <%- if @page_libs&.include?(:pgpKeyDecrypt) %>
       <%= javascript_include_tag 'pgpKeyDecrypt', 'data-turbo-track': 'reload', defer: true %>
     <% end -%>
+    <%= javascript_importmap_tags %>
   </head>
 
   <body>
     <div class="container">
         <div class="content-box">
+          <!-- required for devise -->
+          <p class="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
+          <!-- required for devise -->
           <%= yield %>
         </div>
       </div>
