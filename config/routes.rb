@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users
+  # Routers for Devise.
+  # The 'users/registrations' controller is for curstomizations in the signup form.
+  devise_for :users, :controllers => { registrations: 'users/registrations' }
 
   namespace :admin do
     resources :users, :teams

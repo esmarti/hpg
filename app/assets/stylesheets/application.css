@@ -76,3 +76,11 @@ body {
   background-color: #2d5ba3;
   color: white;
 }
+
+.alert {
+  color: red  
+}
+
+.notice {
+  color: green
+}
