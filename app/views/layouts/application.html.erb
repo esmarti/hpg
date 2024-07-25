@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>HivePassGuard</title>
+    <title><%= content_for?(:title) ? yield(:title) : "HivePassGuard" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Collaborative password sharing platform" %>">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -20,14 +21,24 @@
   </head>
 
   <body>
-    <div class="container">
+    <header>
+          <%= render 'layouts/navigation' %>
+        </header>
+        <main role="main">
+           <%= render 'layouts/messages' %>
+           <%= yield %>
+        </main>
+      </body>
+
+    <!--<div class="container">
         <div class="content-box">
-          <!-- required for devise -->
-          <p class="notice"><%= notice %></p>
-          <p class="alert"><%= alert %></p>
-          <!-- required for devise -->
-          <%= yield %>
+          
+          <p class="notice"><%#= notice %></p>
+          <p class="alert"><%#= alert %></p>
+           
+          <%#= yield %>
         </div>
-      </div>
+      </div>-->
+
   </body>
 </html>
