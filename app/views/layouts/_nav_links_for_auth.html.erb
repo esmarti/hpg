@@ -1,13 +1,11 @@
 <% if user_signed_in? %>
   <li><%= link_to 'Edit account', edit_user_registration_path %></li>
-  <li><%= button_to 'Exit', destroy_user_session_path, method: :delete %></li>
-  
+  <li><%= button_to('Logout', destroy_user_session_path, method: :delete, data: { turbo_method: :delete }, class: "btn btn-outline-success") %></li>
+  <% if current_user.try(:admin?) %>
+  <li><%= link_to 'Admin Dashboard', admin_dashboard_path %></li>
+  <li><%= link_to 'Users management', users_path %></li>
+  <% end %>
 <% else %>
   <li><%= link_to 'Sign in', new_user_session_path %></li>
   <li><%= link_to 'Sign up', new_user_registration_path %></li>
-<% end %>
-<% if user_signed_in? %>
-  <% if current_user.try(:admin?) %>
-    <li><%= link_to 'Users', users_path %></li>
-  <% end %>
 <% end %>

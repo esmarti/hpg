@@ -2,6 +2,10 @@ source "https://rubygems.org"
 
 ruby "3.3.1"
 
+# Bootstrap is required for HPG @esmarti
+gem 'bootstrap', '~> 5.3.3'
+gem "sassc-rails"
+
 # Devise 4.9.4 is currently the most popular web authentication library for Rails. Required for HPG @esmarti
 gem 'devise', '~> 4.9'
 

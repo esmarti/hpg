@@ -14,14 +14,15 @@
  *= require_self
  */
 
+@import "bootstrap";
+
 /* App Layout
 Estilo para el cuerpo del documento */
 body {
   margin: 0;
   padding: 0;
   height: 100vh;
-  display: flex;
-  align-items: center;
+  display: inline;
   justify-content: center;
   background-color: #d2b48c; /* Marrón claro */
   font-family: Arial, sans-serif;
@@ -60,7 +61,6 @@ body {
   font-family: monospace;
   width: 469px;
   height: 144px;
-  readonly;
 }
 
 .file-upload {
