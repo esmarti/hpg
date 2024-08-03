@@ -2,9 +2,16 @@ class TeamsController < ApplicationController
   before_action :set_team, only: %i[ show edit update destroy ]
 
   # GET /teams or /teams.json
+  # Shows all teams of the current user
   def index
-    @teams = Team.all
+    #@teams = Team.all
     @user = User.find(params[:user_id])
+
+    unless @user == current_user
+      redirect_to user_teams_path(current_user), :alert => "Access denied."
+    end
+
+    @teams = @user.teams
   end
 
   # GET /teams/1 or /teams/1.json

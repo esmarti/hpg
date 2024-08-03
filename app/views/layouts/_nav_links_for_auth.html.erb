@@ -1,11 +1,7 @@
-<% if user_signed_in? %>
-  <li><%= link_to 'Edit account', edit_user_registration_path %></li>
-  <li><%= button_to('Logout', destroy_user_session_path, method: :delete, data: { turbo_method: :delete }, class: "btn btn-outline-success") %></li>
+  <li><%= link_to 'Edit account', edit_user_registration_path, class: "dropdown-item" %></li>
+  <li><%= button_to('Logout', destroy_user_session_path, class: "dropdown-item", method: :delete, data: { turbo_method: :delete }, class: "btn") %></li>
   <% if current_user.try(:admin?) %>
-  <li><%= link_to 'Admin Dashboard', admin_dashboard_path %></li>
-  <li><%= link_to 'Users management', users_path %></li>
+  <li><hr class="dropdown-divider" /></li>
+  <li><%= link_to 'Admin Dashboard', admin_dashboard_path, class: "dropdown-item" %></li>
+  <li><%= link_to 'Users management', users_path, class: "dropdown-item" %></li>
   <% end %>
-<% else %>
-  <li><%= link_to 'Sign in', new_user_session_path %></li>
-  <li><%= link_to 'Sign up', new_user_registration_path %></li>
-<% end %>

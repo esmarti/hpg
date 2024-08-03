@@ -1,12 +1,47 @@
-<h1>Teams</h1>
-
-<div id="teams">
-  <% @teams.each do |team| %>
-    <%= render team %>
-    <p>
-      <%= link_to "Show this team", user_team_path(id:team.id, user_id:@user) %>
-    </p>
-  <% end %>
-</div>
-
 <%#= link_to "New team", new_team_path %>
+<h1 class="mt-4">My Teams</h1>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">Teams where you belong to.</li>
+</ol>
+<% if @teams.empty? %>
+<div class="card mb-4">
+  <div class="card-body">
+    YAY! You don't belong to any teams yet.
+  </div>
+</div>
+<% else %>
+<div class="card mb-4">
+  <div class="card-header">
+      <i class="fas fa-table me-1"></i>
+      Teams
+  </div>
+  <div class="card-body">
+      <table id="datatablesSimple">
+          <thead>
+              <tr>
+                  <th>Name</th>
+                  <th>Description</th>
+                  <th>created_at</th>
+                  <th>updated_at</th>
+                  <th>owner_id</th>
+              </tr>
+          </thead>
+          <tfoot>
+              <tr>
+                  <th>Name</th>
+                  <th>Description</th>
+                  <th>created_at</th>
+                  <th>updated_at</th>
+                  <th>owner_id</th>
+              </tr>
+          </tfoot>
+          <tbody>
+            <% @teams.each do |team| %>
+              <%= render team %>
+              <%= link_to "Show this team", user_team_path(id:team.id, user_id:@user) %>
+            <% end %>
+          </tbody>
+      </table>
+  </div>
+</div>
+<% end %>
