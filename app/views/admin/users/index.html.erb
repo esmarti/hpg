@@ -1,11 +1,68 @@
-<p style="color: green"><%= notice %></p>
+<h1 class="mt-4">List of users</h1>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">Administrator</li>
+</ol>
 
-<h1>Users</h1>
-
-<div id="users">
-  <% @users.each do |user| %>
-    <p><%= render user %><%= link_to "Show this user", user %></p>
-  <% end %>
+<div class="card mb-4">
+  <div class="card-header">
+      <i class="fas fa-table me-1"></i>
+      Users
+  </div>
+  <div class="card-body">
+      <table id="datatablesSimple">
+          <thead>
+              <tr>
+                  <th>Name</th>
+                  <th>Last name</th>
+                  <th>email</th>
+                  <th>Role</th>
+                  <th>Seen last</th>
+                  <th>Last IP used</th>
+                  <th>Account confirmed</th>
+                  <th>Locked at</th>
+                  <th>Created at</th>
+                  <th>Updated at</th>
+                  <th>Actions</th>
+              </tr>
+          </thead>
+          <tfoot>
+              <tr>
+                  <th>Name</th>
+                  <th>Last name</th>
+                  <th>email</th>
+                  <th>Role</th>
+                  <th>Seen last</th>
+                  <th>Last IP used</th>
+                  <th>Account confirmed</th>
+                  <th>Locked at</th>
+                  <th>Created at</th>
+                  <th>Updated at</th>
+                  <th>Actions</th>
+              </tr>
+          </tfoot>
+          <tbody>
+            <% @users.each do |user| %>
+            <tr>
+              <td><%= user.name %></td>
+              <td><%= user.lastname %></td>
+              <td><%= user.email %></td>
+              <td><%= user.role %></td>
+              <td><%= user.last_sign_in_at %></td>
+              <td><%= user.last_sign_in_ip %></td>
+              <td><%= user.confirmed? %></td>
+              <td><%= user.locked_at %></td>
+              <td><%= user.created_at %></td>
+              <td><%= user.updated_at %></td>
+              <td>
+                <%= link_to admin_user_path(user), class: "btn btn-info" do %>
+                <i class="fa-regular fa-eye"></i>
+                <% end %>
+              </td>
+            </tr> 
+            <% end %>
+          </tbody>
+      </table>
+  </div>
 </div>
 
-<%= link_to "New user", new_user_path %>
+<%= link_to "New user", new_admin_user_path, class: "btn btn-success"  %>

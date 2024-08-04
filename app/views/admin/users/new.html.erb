@@ -1,9 +1,15 @@
-<h1>New user</h1>
+<h1 class="mt-4">New user</h1>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">Administrator</li>
+</ol>
 
-<%= render "form", user: @user %>
+<div class="card mb-4">
+  <div class="card-body">
+    <h5 class="card-title">User affected:</h5>
+    <%= render "admin/users/form", user: @user %>
+  </div>
+</div>
 
-<br>
-
-<div>
-  <%= link_to "Back to users", users_path %>
+<div class="row row-cols-auto justify-content-xxl-start justify-content-center">
+  <div class="col"><%= link_to "Back", admin_users_path, class: "w-auto btn btn-info" %></div>
 </div>

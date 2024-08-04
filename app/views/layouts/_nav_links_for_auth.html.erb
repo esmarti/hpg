@@ -1,7 +1,7 @@
   <li><%= link_to 'Edit account', edit_user_registration_path, class: "dropdown-item" %></li>
-  <li><%= button_to('Logout', destroy_user_session_path, class: "dropdown-item", method: :delete, data: { turbo_method: :delete }, class: "btn") %></li>
+  <li><%= button_to('Logout', destroy_user_session_path, class: "btn dropdown-item", method: :delete, data: { turbo_method: :delete }) %></li>
   <% if current_user.try(:admin?) %>
   <li><hr class="dropdown-divider" /></li>
   <li><%= link_to 'Admin Dashboard', admin_dashboard_path, class: "dropdown-item" %></li>
-  <li><%= link_to 'Users management', users_path, class: "dropdown-item" %></li>
+  <li><%= link_to 'Users management', admin_users_path, class: "dropdown-item" %></li>
   <% end %>

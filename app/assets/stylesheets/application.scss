@@ -19,9 +19,6 @@
 /* App Layout
 Estilo para el cuerpo del documento */
 body {
-  margin: 0;
-  padding: 0;
-  height: 100vh;
   display: inline;
   justify-content: center;
   background-color: #d2b48c; /* Marrón claro */
@@ -35,30 +32,12 @@ body {
   margin-right: 10px;
 }
 
-.textArea_key {
-  font-family: monospace;
-  width: 469px;
-  height: 144px;
-}
-
 .file-upload {
   background-color: #7f9ccb;
-  padding: 5px 10px;
-  border-radius: 5px;
   border: 1px ridge black;
-  font-size: 0.8rem;
-  margin-bottom: 5px;
 }
 
 .file-upload:hover {
   background-color: #2d5ba3;
   color: white;
-}
-
-.alert {
-  color: red  
-}
-
-.notice {
-  color: green
 }

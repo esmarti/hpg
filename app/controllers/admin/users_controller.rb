@@ -1,4 +1,6 @@
 class Admin::UsersController < ApplicationController
+  before_action :authenticate_user!
+  before_action :admin_only, only: %i[ index show edit update new create destroy ]
   before_action :set_user, only: %i[ show edit update destroy ]
 
   # GET /users or /users.json
@@ -53,7 +55,7 @@ class Admin::UsersController < ApplicationController
     @user.destroy!
 
     respond_to do |format|
-      format.html { redirect_to users_url, notice: "User was successfully destroyed." }
+      format.html { redirect_to admin_users_path, notice: "User was successfully destroyed." }
       format.json { head :no_content }
     end
   end
@@ -95,6 +97,14 @@ class Admin::UsersController < ApplicationController
   end
 
   private
+    # Only allow a user with admin role.
+    def admin_only
+      unless current_user.admin?
+        #redirect_to user_path(current_user.id), :alert => "Access denied."
+        redirect_to root_path, :alert => "Access denied."
+      end
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_user
       @user = User.find(params[:id])
@@ -102,6 +112,6 @@ class Admin::UsersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def user_params
-      params.fetch(:user, {}).permit(:name, :lastname, :email, :role)
+      params.fetch(:user, {}).permit(:name, :lastname, :email, :role, :password, :password_confirmation)
     end
 end

@@ -2,10 +2,14 @@ class CredentialsController < ApplicationController
   before_action :set_credential, only: %i[ show edit update destroy ]
 
   # GET /credentials or /credentials.json
-  # show all credentials of selected user
+  # show all credentials of current_user
   def index
     @user = User.find(params[:user_id])
-    #@credentials = @user.owned_credentials
+
+    unless @user == current_user
+      redirect_to user_credentials_path(current_user), :alert => "Access denied."
+    end
+
     @credentials = Credential.find_by_sql("SELECT * FROM credentials WHERE encrypted_for_id = #{@user.id}")
   end
 

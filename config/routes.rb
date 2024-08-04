@@ -14,8 +14,12 @@ Rails.application.routes.draw do
   delete 'users/gpg_destroy/:id' => 'users#gpg_destroy', as: :users_gpg_destroy
 
   namespace :admin do
-    resources :users, :teams
+    resources :users
+    resources :teams
     get 'dashboard' => 'dashboard#index', as: :dashboard
+    get 'users/gpg_show/:id' => 'users#gpg_show', as: :users_gpg_show
+    post 'users/gpg_update/:id' => 'users#gpg_update', as: :users_gpg_update
+    delete 'users/gpg_destroy/:id' => 'users#gpg_destroy', as: :users_gpg_destroy
   end
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

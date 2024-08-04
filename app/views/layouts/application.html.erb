@@ -59,7 +59,7 @@
             <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                 <div class="sb-sidenav-menu">
                     <div class="nav">
-                        <% if current_user.admin? %>
+                        <% if current_user.try(:admin?) %>
                             <!-- Nav Item - for admin only -->
                             <div class="sb-sidenav-menu-heading">Admin</div>
                             <%= link_to admin_dashboard_path, class: "nav-link" do %>
@@ -86,7 +86,6 @@
                                 <%= link_to  user_credentials_path(current_user), class: "nav-link" do %>
                                     Private
                                 <% end %>
-                                
                             </nav>
                         </div>
                     </div>
@@ -96,10 +95,11 @@
         </div>
         <div id="layoutSidenav_content">
             <main>
-                <div class="container-fluid px-4">
+                <div class="container-fluid px-4 pb-5">
                     <%= render 'layouts/messages' %>
                     <%= yield %>
                 </div>
+            <br /><br />
             </main>
             <footer class="py-4 bg-light mt-auto position-absolute bottom-0 w-100">
                 <div class="container-fluid px-4">

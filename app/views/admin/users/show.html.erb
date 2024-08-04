@@ -1,10 +1,16 @@
-<p style="color: green"><%= notice %></p>
+<h1 class="mt-4">User operations</h1>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">Administrator</li>
+</ol>
 
 <%= render @user %>
 
-<div>
-  <%= link_to "Edit this user", edit_user_path(@user) %> |
-  <%= link_to "Back to users", users_path %> |
-  <%= link_to "Show details GPG certificate", :controller => "users", :action => "gpg_show", :id => @user %>
-  <%#= button_to "Destroy this user", @user, method: :delete %>
+<div class="row row-cols-auto justify-content-xxl-start justify-content-center">
+  <div class="col"><%= link_to "Edit this user", edit_admin_user_path(@user), class: "w-auto btn btn-primary" %></div>
+  <div class="col"><%= link_to "Show details GPG certificate", admin_users_gpg_show_path(@user), class: "w-auto btn btn-secondary" %></div>
+  <div class="col"><%= button_to admin_user_path(@user), class: "w-auto btn btn-danger", method: :delete, data: { turbo_method: :delete } do %>
+    <i class="fa-solid fa-triangle-exclamation"></i>
+    Eliminar Usuario
+  <% end %></div>
+  <div class="col"><%= link_to "Back to users", admin_users_path, class: "w-auto btn btn-info" %></div>
 </div>

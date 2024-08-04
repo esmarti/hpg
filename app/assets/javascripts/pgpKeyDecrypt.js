@@ -23,6 +23,7 @@ async function pgpDecrypt(passphrase, email) {
     document.getElementById("copyBtn").style = "display: block";
     document.getElementById("passDecrypted").style = "display: block";
     document.getElementById("passDecrypted").value = decrypted;
+    document.getElementById("passDecrypted").focus();
     return;
 }
 

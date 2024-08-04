@@ -1,4 +1,4 @@
-<%= form_with(model: user) do |form| %>
+<%= form_with model: user, url: admin_users_path, html: { class: "edit_user" } do |form| %>
   <% if user.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -11,24 +11,37 @@
     </div>
   <% end %>
     <!-- user's fields -->
-    <div>
-      <%= form.label :name %>
+    <div class="field">
+      <%= form.label :name %><br>
       <%= form.text_field :name %>
     </div>
-    <div>
-      <%= form.label :lastname %>
+    <div class="field">
+      <%= form.label :lastname %><br>
       <%= form.text_field :lastname %>
     </div>
-    <div>
-      <%= form.label :email %>
+    <div class="field">
+      <%= form.label :email %><br>
       <%= form.text_field :email %>
     </div>
-      <div>
-      <%= form.label :role %>
+      <div class="field">
+      <%= form.label :role %><br>
       <%= form.text_field :role %>
     </div>
+    <div class="field">
+      <%= form.label :password %>
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br />
+      <%= form.password_field :password, autocomplete: "new-password" %>
+    </div>
 
-    <div>
-      <%= form.submit %>
+    <div class="field">
+      <%= form.label :password_confirmation %><br />
+      <%= form.password_field :password_confirmation, autocomplete: "new-password" %>
+    </div>
+    <br>
+    <div class="actions">
+      <%= form.submit class: "btn btn-primary" %>
     </div>
 <% end %>
+
