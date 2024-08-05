@@ -1,5 +1,7 @@
 class Admin::TeamsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_team, only: %i[ show edit update destroy ]
+  before_action :admin_only
 
   # GET /teams or /teams.json
   def index
@@ -57,7 +59,14 @@ class Admin::TeamsController < ApplicationController
     end
   end
 
-  private
+   private
+    # Only allow a user with admin role.
+    def admin_only
+      unless current_user.admin?
+        redirect_to root_path, :alert => "Access denied."
+      end
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_team
       @team = Team.find(params[:id])

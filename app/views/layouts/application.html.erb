@@ -43,7 +43,9 @@
             </div>
         <% if user_signed_in? %>
             <!-- Navbar-->
-            <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4 ms-lg-auto ms-md-auto">
+        <div class="ms-auto ms-md-0 me-3 me-lg-4 ms-lg-auto ms-md-auto">
+            <ul class="navbar-nav">
+                <div class="text-secondary align-content-center"><%= current_user.name+" "+current_user.lastname %></div>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
@@ -51,6 +53,7 @@
                     </ul>
                 </li>
             </ul>
+        </div>
         <% end %>
     </nav>
     <div id="layoutSidenav">
@@ -66,15 +69,19 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
                             <% end %>
+                            <%= link_to admin_users_path, class: "nav-link" do %>
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-users"></i></div>
+                                Users management
+                            <% end %>
                         <% end %>
                         <!-- Nav Item - for signed-in users only -->
                         <div class="sb-sidenav-menu-heading">Manage</div>
                         <%= link_to user_teams_path(current_user), class: "nav-link" do %>
-                            <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                            <div class="sb-nav-link-icon"><i class="fa-solid fa-people-group"></i></div>
                             Teams
                         <% end %>
                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
-                            <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                            <div class="sb-nav-link-icon"><i class="fa-solid fa-key"></i></div>
                             Credentials
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
@@ -83,7 +90,7 @@
                                 <%= link_to  user_credentials_path(current_user), class: "nav-link" do %>
                                     Shared
                                 <% end %>
-                                <%= link_to  user_credentials_path(current_user), class: "nav-link" do %>
+                                <%= link_to  user_private_credentials_path(current_user), class: "nav-link" do %>
                                     Private
                                 <% end %>
                             </nav>

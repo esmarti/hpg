@@ -1,23 +1,31 @@
 class CredentialsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_credential, only: %i[ show edit update destroy ]
 
   # GET /credentials or /credentials.json
   # show all credentials of current_user
   def index
     @user = User.find(params[:user_id])
+    filter_current_user(@user)
 
-    unless @user == current_user
-      redirect_to user_credentials_path(current_user), :alert => "Access denied."
+    # get user private_team
+    private_team = @user.owned_teams.find_by(name: "Private")
+
+    # get all credentials of current_user, which are encrypter for him. The private credentials are not returned.
+    if private_team != nil
+      @credentials = Credential.find_by_sql("SELECT * FROM credentials WHERE encrypted_for_id = #{@user.id} AND NOT team_id = #{private_team.id}")
+    else
+        @credentials = Credential.find_by_sql("SELECT * FROM credentials WHERE encrypted_for_id = #{@user.id}")
     end
-
-    @credentials = Credential.find_by_sql("SELECT * FROM credentials WHERE encrypted_for_id = #{@user.id}")
   end
 
   # GET /credentials/1 or /credentials/1.json
   def show
+    @user = User.find(params[:user_id])
+    filter_current_user(@user)
+
     @page_libs = [:openpgp, :pgpKeyDecrypt]
     @credential = Credential.find(params[:id])
-    @user = User.find(params[:user_id])
   end
 
   # GET /credentials/new
@@ -28,6 +36,15 @@ class CredentialsController < ApplicationController
 
   # GET /credentials/1/edit
   def edit
+    @user = User.find(params[:user_id])
+    filter_current_user(@user)
+
+    #TODO
+    #get credential id from params
+    #get credential owner
+    #compare if owner is current_user
+      #if true, show edit page
+      #if false, redirect to user_credentials_path
   end
 
   # POST /credentials or /credentials.json
@@ -85,7 +102,32 @@ class CredentialsController < ApplicationController
     end
   end
 
+  def private_credentials
+    @user = User.find(params[:user_id])
+    filter_current_user(@user)
+
+    # get user teams
+    user_teams = @user.owned_teams
+
+    # get user team, that is the private one.
+    private_team = user_teams.find_by(name: "Private")
+
+    # get all credentials of this private team
+    if @credentials != nil
+      @credentials = private_team.credentials
+    else
+      @credentials = []
+    end
+  end
+
   private
+    # Only current user logged in is able to see this page
+    def filter_current_user(user)
+      unless user == current_user
+        redirect_to user_credentials_path(current_user), :alert => "Access denied."
+      end
+    end
+
     def encrypt_pass(user, pass)
       # this function is a helper to encrypt the password given, using the user's public key.
       return nil if user.gpg_key_id == nil

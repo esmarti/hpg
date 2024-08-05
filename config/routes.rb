@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   # The 'users/registrations' controller is for curstomizations in the signup form.
   devise_for :users, :controllers => { registrations: 'users/registrations' }
   
-  resources :users, only: [:new, :index, :edit, :show, :update, :gpg_show, :gpg_update, :gpg_destroy] do
+  resources :users, only: [ :edit, :update, :gpg_show, :gpg_update, :gpg_destroy] do
+    get 'private_credentials' => 'credentials#private_credentials', as: :private_credentials
     resources :credentials
     resources :teams
   end

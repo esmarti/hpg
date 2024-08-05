@@ -1,4 +1,5 @@
 class TeamsController < ApplicationController
+  before_action :authenticate_user!  
   before_action :set_team, only: %i[ show edit update destroy ]
 
   # GET /teams or /teams.json
@@ -6,10 +7,7 @@ class TeamsController < ApplicationController
   def index
     #@teams = Team.all
     @user = User.find(params[:user_id])
-
-    unless @user == current_user
-      redirect_to user_teams_path(current_user), :alert => "Access denied."
-    end
+    filter_current_user(@user)
 
     @teams = @user.teams
   end
@@ -68,6 +66,13 @@ class TeamsController < ApplicationController
   end
 
   private
+    # Only current user logged in is able to see this page
+    def filter_current_user(user)
+      unless user == current_user
+        redirect_to user_teams_path(current_user), :alert => "Access denied."
+      end
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_team
       @team = Team.find(params[:id])
