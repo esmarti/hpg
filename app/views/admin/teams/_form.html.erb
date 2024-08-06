@@ -1,8 +1,7 @@
-<%= form_with(model: team) do |form| %>
+<%= form_with model: team, url: admin_teams_path do |form| %>
   <% if team.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(team.errors.count, "error") %> prohibited this team from being saved:</h2>
-
       <ul>
         <% team.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -10,8 +9,29 @@
       </ul>
     </div>
   <% end %>
-
-  <div>
-    <%= form.submit %>
+  <!-- user's fields -->
+  <div class="field">
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </div>
+  <div class="field">
+    <%= form.label :description %><br>
+    <%= form.text_field :description %>
+  </div>
+  <div class="field">
+    <%= form.label :created_at %><br>
+    <%= form.date_field :created_at, :disabled => true %>
+  </div>
+    <div class="field">
+    <%= form.label :updated_at %><br>
+    <%= form.date_field :updated_at, :disabled => true  %>
+  </div>
+  <div class="field">
+    <%= form.label :owner %><br />
+    <%= form.collection_select :owner, User.all, :id, :name %>
+  </div>
+  <br>
+  <div class="actions">
+    <%= form.submit class: "btn btn-primary" %>
   </div>
 <% end %>

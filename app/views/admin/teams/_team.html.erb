@@ -1,2 +1,15 @@
-<div id="<%= dom_id team %>">
-</div>
+<tr>
+    <td><%= team.name %></td>
+    <td><%= team.description %></td>
+    <td><%= team.created_at %></td>
+    <td><%= team.updated_at %></td>
+    <td><%= team.owner.name+" "+team.owner.lastname %></td>
+    <td>
+		<%= link_to edit_admin_team_path(team), class: "btn btn-info" do %>
+			<i class="fa-solid fa-pen-to-square"></i>
+		<% end %>
+		<%= link_to admin_team_path(team), class: "btn btn-info" do %>
+			<i class="fa-regular fa-eye"></i>
+		<% end %>
+    </td>
+</tr>

@@ -1,10 +1,7 @@
 <h1>Editing team</h1>
-
-<%= render "form", team: @team %>
-
+  <%= render "form", team: @team %>
 <br>
-
 <div>
-  <%= link_to "Show this team", @team %> |
-  <%= link_to "Back to teams", teams_path %>
+  <%= link_to "Show this team", admin_team_path(@team), class: "btn btn-primary" %>
+  <%= link_to "Back to teams", admin_teams_path, class: "btn btn-info" %>
 </div>

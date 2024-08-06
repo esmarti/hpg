@@ -23,11 +23,11 @@ class Admin::TeamsController < ApplicationController
 
   # POST /teams or /teams.json
   def create
-    @team = Team.new(team_params)
+    @team = Team.new(name: team_params[:name], description: team_params[:description], owner: User.find_by(id: team_params[:owner]))
 
     respond_to do |format|
       if @team.save
-        format.html { redirect_to team_url(@team), notice: "Team was successfully created." }
+        format.html { redirect_to admin_team_path(@team), notice: "Team was successfully created." }
         format.json { render :show, status: :created, location: @team }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,9 +38,11 @@ class Admin::TeamsController < ApplicationController
 
   # PATCH/PUT /teams/1 or /teams/1.json
   def update
+    owner = User.find_by(id: team_params[:owner])
+    
     respond_to do |format|
-      if @team.update(team_params)
-        format.html { redirect_to team_url(@team), notice: "Team was successfully updated." }
+      if @team.update( name: team_params[:name], description: team_params[:description], owner: owner )
+        format.html { redirect_to admin_teams_url, notice: "Team was successfully updated." }
         format.json { render :show, status: :ok, location: @team }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -51,12 +53,21 @@ class Admin::TeamsController < ApplicationController
 
   # DELETE /teams/1 or /teams/1.json
   def destroy
-    @team.destroy!
+    if @team.user_ids.count > 0
+      redirect_to admin_teams_path, alert: "Can't delete team with members."
+      return
+      if @team.credentials.count > 0
+        redirect_to admin_teams_path, alert: "Can't delete team with credentials."
+        return
+      end
+    else
+      @team.destroy!
 
-    respond_to do |format|
-      format.html { redirect_to teams_url, notice: "Team was successfully destroyed." }
-      format.json { head :no_content }
-    end
+      respond_to do |format|
+        format.html { redirect_to admin_teams_path, notice: "Team was successfully destroyed." }
+        format.json { head :no_content }
+      end
+    end 
   end
 
    private
@@ -74,6 +85,6 @@ class Admin::TeamsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def team_params
-      params.fetch(:team, {})
+      params.fetch(:team, {}).permit(:name, :description, :owner)
     end
 end

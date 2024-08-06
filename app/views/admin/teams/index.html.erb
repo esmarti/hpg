@@ -1,14 +1,49 @@
-<p style="color: green"><%= notice %></p>
+<h1 class="mt-4">Teams</h1>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">Admin</li>
+</ol>
 
-<h1>Teams</h1>
-
-<div id="teams">
-  <% @teams.each do |team| %>
-    <%= render team %>
-    <p>
-      <%= link_to "Edit this team", edit_admin_team_path(team) %>
-    </p>
-  <% end %>
+<% if @teams.empty? %>
+<div class="card mb-4">
+  <div class="card-body">
+    YAY! You don't belong to any teams yet.
+  </div>
 </div>
-
-<%= link_to "New team", new_admin_team_path %>
+<% else %>
+<div class="card mb-4">
+  <div class="card-header">
+      <i class="fas fa-table me-1"></i>
+      Teams
+  </div>
+  <div class="card-body">
+      <table id="datatablesSimple">
+          <thead>
+              <tr>
+                  <th>Name</th>
+                  <th>Description</th>
+                  <th>Created at</th>
+                  <th>Updated at</th>
+                  <th>Team owner</th>
+                  <th>Actions</th>
+              </tr>
+          </thead>
+          <tfoot>
+              <tr>
+                  <th>Name</th>
+                  <th>Description</th>
+                  <th>Created at</th>
+                  <th>Updated at</th>
+                  <th>Team owner</th>
+                  <th>Actions</th>
+              </tr>
+          </tfoot>
+          <tbody>
+            <% @teams.each do |team| %>
+              <%= render team %>
+            <% end %>
+          </tbody>
+      </table>
+  </div>
+</div>
+<% end %>
+<%= link_to "New team", new_admin_team_path, class: "btn btn-primary" %>

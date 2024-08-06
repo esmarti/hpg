@@ -73,6 +73,10 @@
                                 <div class="sb-nav-link-icon"><i class="fa-solid fa-users"></i></div>
                                 Users management
                             <% end %>
+                            <%= link_to admin_teams_path, class: "nav-link" do %>
+                                <div class="sb-nav-link-icon"><i class="fa-solid fa-people-group"></i></div>
+                                Teams management
+                            <% end %>
                         <% end %>
                         <!-- Nav Item - for signed-in users only -->
                         <div class="sb-sidenav-menu-heading">Manage</div>
@@ -108,7 +112,7 @@
                 </div>
             <br /><br />
             </main>
-            <footer class="py-4 bg-light mt-auto position-absolute bottom-0 w-100">
+            <footer class="py-4 bg-light mt-auto bottom-0 w-100">
                 <div class="container-fluid px-4">
                     <div class="d-flex align-items-center justify-content-between small">
                         <div class="text-muted">Hive Pass Guard - Universidad de Mendoza 2024</div>
