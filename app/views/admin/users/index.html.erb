@@ -51,8 +51,8 @@
               <td><%= user.last_sign_in_ip %></td>
               <td><%= user.confirmed? %></td>
               <td><%= user.locked_at %></td>
-              <td><%= user.created_at %></td>
-              <td><%= user.updated_at %></td>
+              <td><%= time_tag user.created_at %></td>
+              <td><%= time_tag user.updated_at %></td>
               <td>
                 <%= link_to admin_user_path(user), class: "btn btn-info" do %>
                 <i class="fa-regular fa-eye"></i>

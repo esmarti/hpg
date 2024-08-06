@@ -1,6 +1,112 @@
-<p style="color: green"><%= notice %></p>
+<h1 class="mt-4">Team members</h1>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">Administrator</li>
+    <li class="breadcrumb-item active">Teams</li>
+    <li class="breadcrumb-item active">Members</li>
+</ol>
 
-<%= render @team %>
+<div class="card mb-4">
+  <div class="card-header">
+      <i class="fas fa-table me-1"></i>
+      Team members
+  </div>
+  <div class="card-body">
+      <table id="datatablesSimple">
+        <%= link_to  "#", onClick:"toggleUserSelector();" ,class: "btn btn-success" do %>
+        <i class="fa-solid fa-plus"></i>
+        <% end %>
+          <thead>
+              <tr>
+                  <th>Name</th>
+                  <th>Last name</th>
+                  <th>email</th>
+                  <th>Role</th>
+                  <th>Seen last</th>
+                  <th>Actions</th>
+              </tr>
+          </thead>
+          <tfoot>
+              <tr>
+                  <th>Name</th>
+                  <th>Last name</th>
+                  <th>email</th>
+                  <th>Role</th>
+                  <th>Seen last</th>
+                  <th>Actions</th>
+              </tr>
+          </tfoot>
+          <tbody>
+            <% @members.each do |user| %>
+            <tr>
+              <td><%= user.name %></td>
+              <td><%= user.lastname %></td>
+              <td><%= user.email %></td>
+              <td><%= user.role %></td>
+              <td><%= time_tag user.last_sign_in_at %></td>
+              <td>
+                <%= link_to  admin_team_remove_user_path(@team, user), class: "btn btn-danger" do %>
+                <i class="fa-solid fa-user-minus"></i>
+                <% end %>
+              </td>
+            </tr> 
+            <% end %>
+          </tbody>
+      </table>
+  </div>
+</div>
+
+<!-- add user table -->
+<div class="card mb-4 d-none" id=userTable>
+  <div class="card-header">
+      <i class="fas fa-table me-1"></i>
+      New member - Select a user
+  </div>
+  <div class="card-body">
+      <table id="datatablesUser">
+          <thead>
+              <tr>
+                  <th>Name</th>
+                  <th>Last name</th>
+                  <th>email</th>
+                  <th>Role</th>
+                  <th>Seen last</th>
+                  <th>Actions</th>
+              </tr>
+          </thead>
+          <tfoot>
+              <tr>
+                  <th>Name</th>
+                  <th>Last name</th>
+                  <th>email</th>
+                  <th>Role</th>
+                  <th>Seen last</th>
+                  <th>Actions</th>
+              </tr>
+          </tfoot>
+          <tbody>
+            <% @users.each do |user| %>
+            <tr>
+              <td><%= user.name %></td>
+              <td><%= user.lastname %></td>
+              <td><%= user.email %></td>
+              <td><%= user.role %></td>
+              <td><%= if user.last_sign_in_at?
+                        time_tag user.last_sign_in_at
+                      else
+                        "never"
+                      end %>
+              </td>
+              <td>
+                <%= link_to  admin_team_add_user_path(@team, user), class: "btn btn-success" do %>
+                <i class="fa-solid fa-user-plus"></i>
+                <% end %>
+              </td>
+            </tr> 
+            <% end %>
+          </tbody>
+      </table>
+  </div>
+</div>
 
 <div>
   <%= link_to "Edit this team", edit_admin_team_path(@team), class: "btn btn-primary" %>

@@ -113,11 +113,15 @@ class CredentialsController < ApplicationController
     private_team = user_teams.find_by(name: "Private")
 
     # get all credentials of this private team
-    if @credentials != nil
-      @credentials = private_team.credentials
-    else
-      @credentials = []
+    if private_team != nil
+      if private_team.credentials.count > 0
+        @credentials = private_team.credentials
+        return
+      else
+        @credentials = []
+      end
     end
+    @credentials = []
   end
 
   private

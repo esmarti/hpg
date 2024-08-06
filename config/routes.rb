@@ -16,7 +16,10 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :users
-    resources :teams
+    resources :teams do
+      get 'remove_user/:user_id' => 'teams#remove_user', as: :remove_user
+      get 'add_user/:user_id' => 'teams#add_user', as: :add_user
+    end
     get 'dashboard' => 'dashboard#index', as: :dashboard
     get 'users/gpg_show/:id' => 'users#gpg_show', as: :users_gpg_show
     post 'users/gpg_update/:id' => 'users#gpg_update', as: :users_gpg_update

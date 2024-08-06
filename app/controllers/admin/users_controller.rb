@@ -40,8 +40,8 @@ class Admin::UsersController < ApplicationController
   # PATCH/PUT /users/1 or /users/1.json
   def update
     respond_to do |format|
-      if @user.update(user_params)
-        format.html { redirect_to user_url(@user), notice: "User was successfully updated." }
+      if @user.update(name: user_params[:name], lastname: user_params[:lastname], email: user_params[:email], fullname: user_params[:name] + " " + user_params[:lastname], role: user_params[:role], password: user_params[:password], password_confirmation: user_params[:password_confirmation])
+        format.html { redirect_to admin_user_path(@user), notice: "User was successfully updated." }
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit, status: :unprocessable_entity }

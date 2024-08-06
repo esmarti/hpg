@@ -1,7 +1,7 @@
 <tr>
     <td><%= team.name %></td>
     <td><%= team.description %></td>
-    <td><%= team.created_at %></td>
-    <td><%= team.updated_at %></td>
+    <td><%= time_tag team.created_at %></td>
+    <td><%= time_tag team.updated_at %></td>
     <td><%= team.owner.name+" "+team.owner.lastname %></td>
 </tr>

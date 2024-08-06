@@ -24,3 +24,8 @@ window.addEventListener('DOMContentLoaded', event => {
     }
 
 });
+
+function toggleUserSelector(){
+    var userTable=document.getElementById("userTable");
+    userTable.classList.toggle("d-none");
+}

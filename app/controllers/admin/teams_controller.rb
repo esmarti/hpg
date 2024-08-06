@@ -10,6 +10,8 @@ class Admin::TeamsController < ApplicationController
 
   # GET /teams/1 or /teams/1.json
   def show
+    @members = @team.users
+    @users = User.all
   end
 
   # GET /teams/new
@@ -68,6 +70,30 @@ class Admin::TeamsController < ApplicationController
         format.json { head :no_content }
       end
     end 
+  end
+
+  def remove_user
+    @team = Team.find(params[:team_id])
+    @user = User.find(params[:user_id])
+    if @team.credentials.count > 0
+      user_credentials=Credential.find_by_sql("SELECT * FROM credentials WHERE encrypted_for_id = #{@user.id} AND team_id = #{@team.id}")
+      if user_credentials.count > 0
+       user_credentials.each(&:destroy)
+      end
+    end 
+    @team.users.delete(@user)
+    redirect_to admin_team_path(@team), notice: "User removed from team."
+  end
+
+  def add_user
+    @team = Team.find(params[:team_id])
+    @user = User.find(params[:user_id])
+    if @user.gpg_key == nil
+      redirect_to admin_team_path(@team), alert: "User doesn't have a GPG key defined."
+      return
+    end 
+    @team.users << @user
+    redirect_to admin_team_path(@team), notice: "User added to team."
   end
 
    private
