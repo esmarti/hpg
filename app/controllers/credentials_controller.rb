@@ -52,7 +52,7 @@ class CredentialsController < ApplicationController
     # if user has no gpg key, redirect to user_credentials_path with error.
     user = User.find(params[:user_id])
     if user.gpg_key_id == nil
-      redirect_to user_credentials_url(user), notice: "User has no gpg Key defined yet."
+      redirect_to user_credentials_url(user), alert: "User has no gpg Key defined yet."
       return
     end
 

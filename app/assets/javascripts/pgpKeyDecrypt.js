@@ -1,5 +1,6 @@
 function showDecControls() {
-    document.getElementById("decryptControls").style="display: block";
+    //document.getElementById("decryptControls").style="display: block";
+    document.getElementById("decryptControls").classList.toggle("d-none");
     return;
 }
 
@@ -12,11 +13,34 @@ async function pgpDecrypt(passphrase, email) {
     const armoredMessage = document.getElementById("pass").value;
     const message = await openpgp.readMessage({ armoredMessage: armoredMessage });
     
-    const { data: decrypted, signature } = await openpgp.decrypt({
-        message,
-        verificationKeys: "", // optional
-        decryptionKeys: privateKey
-    });
+    let decrypted;
+    try {
+        const result = await openpgp.decrypt({
+            message: message,
+            verificationKeys: "", // optional
+            decryptionKeys: privateKey
+        });
+
+    decrypted = result.data;
+
+    } catch (error) {
+        //show flash error to view
+        let container = document.getElementsByTagName("main")[0].firstChild.nextElementSibling;
+        let div = document.createElement('div');
+        div.classList.add("alert", "alert-dismissible", "fade", "show", "alert-danger");
+        div.setAttribute("role", "alert");
+        let msg = document.createElement('p')
+        msg.innerHTML = error.message;
+        div.append(msg);
+        let closeBtn = document.createElement('button');
+        closeBtn.classList.add("btn-close");
+        closeBtn.setAttribute("type", "button");
+        closeBtn.setAttribute("data-bs-dismiss", "alert");
+        closeBtn.setAttribute("aria-label", "Close");
+        div.append(closeBtn);
+        container.prepend(div);
+        return;
+    }
 
     //write data into textarea
     //Puts the pass clear-text in the textarea
