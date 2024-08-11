@@ -4,49 +4,76 @@ function showDecControls() {
     return;
 }
 
+function fireFlash(message){
+    let container = document.getElementsByTagName("main")[0].firstChild.nextElementSibling;
+    let div = document.createElement('div');
+    div.classList.add("alert", "alert-dismissible", "fade", "show", "alert-danger");
+    div.setAttribute("role", "alert");
+    let msg = document.createElement('p')
+    msg.innerHTML = message;
+    div.append(msg);
+    let closeBtn = document.createElement('button');
+    closeBtn.classList.add("btn-close");
+    closeBtn.setAttribute("type", "button");
+    closeBtn.setAttribute("data-bs-dismiss", "alert");
+    closeBtn.setAttribute("aria-label", "Close");
+    div.append(closeBtn);
+    container.prepend(div);
+    return;
+}
+
 async function pgpDecrypt(passphrase, email) {
     const privateKeyArmored = document.getElementById("privateKey").value;
     const privateKey = await openpgp.decryptKey({
             privateKey: await openpgp.readPrivateKey({ armoredKey: privateKeyArmored }),
             passphrase
     });
-    const armoredMessage = document.getElementById("pass").value;
-    const message = await openpgp.readMessage({ armoredMessage: armoredMessage });
+    const armoredMessageUsername = document.getElementById("username").value;
+    const messageUsername = await openpgp.readMessage({ armoredMessage: armoredMessageUsername });
     
-    let decrypted;
+    let decryptedUsername;
     try {
-        const result = await openpgp.decrypt({
-            message: message,
+        const resultUsername = await openpgp.decrypt({
+            message: messageUsername,
             verificationKeys: "", // optional
             decryptionKeys: privateKey
         });
 
-    decrypted = result.data;
+    decryptedUsername = resultUsername.data;
 
     } catch (error) {
         //show flash error to view
-        let container = document.getElementsByTagName("main")[0].firstChild.nextElementSibling;
-        let div = document.createElement('div');
-        div.classList.add("alert", "alert-dismissible", "fade", "show", "alert-danger");
-        div.setAttribute("role", "alert");
-        let msg = document.createElement('p')
-        msg.innerHTML = error.message;
-        div.append(msg);
-        let closeBtn = document.createElement('button');
-        closeBtn.classList.add("btn-close");
-        closeBtn.setAttribute("type", "button");
-        closeBtn.setAttribute("data-bs-dismiss", "alert");
-        closeBtn.setAttribute("aria-label", "Close");
-        div.append(closeBtn);
-        container.prepend(div);
+        fireFlash(error.message);
+        return;
+    }
+
+    const armoredMessagePass = document.getElementById("pass").value;
+    const messagePass = await openpgp.readMessage({ armoredMessage: armoredMessagePass });
+    
+    let decryptedPass;
+    try {
+        const resultPass = await openpgp.decrypt({
+            message: messagePass,
+            verificationKeys: "", // optional
+            decryptionKeys: privateKey
+        });
+
+    decryptedPass = resultPass.data;
+
+    } catch (error) {
+        //show flash error to view
+        fireFlash(error.message);
         return;
     }
 
     //write data into textarea
     //Puts the pass clear-text in the textarea
-    document.getElementById("copyBtn").style = "display: block";
-    document.getElementById("passDecrypted").style = "display: block";
-    document.getElementById("passDecrypted").value = decrypted;
+    document.getElementById("copyBtn_username").classList.toggle("d-none");
+    document.getElementById("copyBtn_pass").classList.toggle("d-none");
+    document.getElementById("userDecrypted").classList.toggle("d-none");
+    document.getElementById("userDecrypted").value = decryptedUsername;
+    document.getElementById("passDecrypted").classList.toggle("d-none");
+    document.getElementById("passDecrypted").value = decryptedPass;
     document.getElementById("passDecrypted").focus();
     return;
 }
@@ -58,8 +85,9 @@ function handleFileSelect() {
   reader.onload = function() {
     const contents = reader.result;
     document.getElementById("privateKey").value = contents;
-    document.getElementById("privateKey").style="display: block";
-    document.getElementById("go_btn").style="display: block";
+    document.getElementById("privateKey").classList.toggle("d-none");
+    document.getElementById("privateKey_heading").classList.toggle("d-none");
+    document.getElementById("go_btn").classList.toggle("d-none");
     return;
   };
   reader.readAsText(file);

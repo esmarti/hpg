@@ -65,6 +65,7 @@ class CredentialsController < ApplicationController
         credential.owner = user
         # Replace the clear-text password with the encrypted one.
         credential.pass = encrypt_pass(member, credential.pass)
+        credential.username = encrypt_pass(member, credential.username)
         credential.encrypted_for = member
         credential.save
       end
