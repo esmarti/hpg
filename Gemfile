@@ -75,3 +75,6 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+ # Add webrick to 1.8.2 for security vulnerability discovered.
+gem "webrick", ">= 1.8.2"
