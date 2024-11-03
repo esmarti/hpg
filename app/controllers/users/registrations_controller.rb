@@ -22,10 +22,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # PUT /resource
    def update
      super do |user|
-           @user.fullname = params[:user][:name] + " " + params[:user][:lastname]
-           @user.save
-           redirect_to(root_path notice: 'User was successfully updated.');
-           return
+           user.fullname = params[:user][:name] + " " + params[:user][:lastname]
+           # user.save
+           # redirect_to(root_path notice: 'User was successfully updated.');
+           # return
      end
    end
 
