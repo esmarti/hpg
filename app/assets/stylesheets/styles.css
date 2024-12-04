@@ -10877,24 +10877,11 @@ body {
   min-width: 0;
   flex-grow: 1;
   min-height: calc(100vh - 56px);
-  margin-left: -225px;
+  /*margin-left: -225px;*/
 }
 
 .sb-sidenav-toggled #layoutSidenav #layoutSidenav_nav {
   transform: translateX(0);
-}
-.sb-sidenav-toggled #layoutSidenav #layoutSidenav_content:before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #000;
-  z-index: 1037;
-  opacity: 0.5;
-  transition: opacity 0.3s ease-in-out;
 }
 
 @media (min-width: 992px) {
@@ -10909,7 +10896,7 @@ body {
     transform: translateX(-225px);
   }
   .sb-sidenav-toggled #layoutSidenav #layoutSidenav_content {
-    margin-left: -225px;
+    /*margin-left: -225px;*/
   }
   .sb-sidenav-toggled #layoutSidenav #layoutSidenav_content:before {
     display: none;
